@@ -4,6 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'path/to/PHPMailer/src/PHPMailer.php';
 require 'path/to/PHPMailer/src/Exception.php';
+require 'path/to/PHPMailer/src/SMTP.php'; // Add this line
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $to = "brynley.bp@gmail.com"; // Your Email address
@@ -16,10 +17,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         // Server settings
-        $mail->isMail();
+        $mail->isSMTP(); // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true; // Enable SMTP authentication
+        $mail->Username = 'brynley.bp@gmail.com'; // Your Gmail address
+        $mail->Password = 'zvkovilysqsezypi'; // Your Gmail app password
+        $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 465; // TCP port to connect to
 
         // Recipients
-        $mail->setFrom('noreply@galacticaio.com', 'Galactic AIO');
+        $mail->setFrom('noreply@galactic.investments.com', 'Galactic Investments');
         $mail->addAddress($to);
 
         // Content
