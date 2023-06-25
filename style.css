@@ -332,6 +332,11 @@ nav {
     border: none;
     margin: 10px 0;
   }
+
+  .faq:nth-child(2), /* Add this line to target the second question */
+  .faq:nth-child(5) { /* Add this line to target the fifth question */
+    text-align: left; /* Set the text alignment to left */
+  }
   
   @media screen and (max-width: 768px) {
     .wrapper{
