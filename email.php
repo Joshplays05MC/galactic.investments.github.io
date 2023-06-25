@@ -26,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Port = 465; // TCP port to connect to
 
         // Recipients
-        $mail->setFrom('noreply@galactic.investments.com', 'Galactic Investments');
-        $mail->addAddress($to);
+        $mail->setFrom('brynley.bp@gmail.com', 'Galactic Investments');
+        $mail->addAddress($_POST["email]);
 
         // Content
         $mail->isHTML(false);
