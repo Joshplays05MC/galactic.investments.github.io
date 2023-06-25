@@ -31,6 +31,8 @@ canvas {
   z-index: -1;
 }
 
+
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -83,6 +85,7 @@ nav {
   .nav-links a:hover {
     background-color: #8e24aa;
   }
+
   
   .burger {
     display: none;
@@ -262,16 +265,16 @@ nav {
     justify-content: center;
     padding: 100px 0;
     color: #fff;
-    position: relative; /* Add position relative */
+    position: relative;
   }
   
   .wrapper > .faq-title {
     margin: 1.5rem 0;
     text-align: center;
     color: #fff;
-    position: sticky; /* Change position to sticky */
-    top: 20px; /* Adjust the top value to desired position */
-    z-index: 2; /* Increase z-index to keep it on top of other elements */
+    position: sticky;
+    top: 20px;
+    z-index: 2;
   }
   
   .wrapper > .faq-title {
@@ -333,10 +336,23 @@ nav {
   @media screen and (max-width: 768px) {
     .wrapper{
       width: 100%;
-      margin: 0 20px;
+      max-width: 90%;
+      margin: auto;
       margin-bottom: 30px;
     }
+    
+    .accordion {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    
+    .accordion i {
+      margin-top: 10px;
+      margin-left: 0;
+    }
   }
+  
   
   
   .call {
