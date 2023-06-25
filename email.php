@@ -27,7 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Recipients
         $mail->setFrom('brynley.bp@gmail.com', 'Galactic Investments');
-        $mail->addAddress($_POST["email]);
+        $mail->addAddress($to);
+        $mail->addReplyTo($from, $name);
 
         // Content
         $mail->isHTML(false);
