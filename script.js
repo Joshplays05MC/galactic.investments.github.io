@@ -176,32 +176,7 @@ particlesJS("particles-js", {
 });
 
 
-// Add the following JavaScript code at the end of the <body> tag or in a separate JavaScript file
 
-// Get the necessary elements
-const callContainer = document.querySelector('.call-container');
-const calls = Array.from(document.querySelectorAll('.call'));
-const dotsContainer = document.querySelector('.dots-container');
-
-// Create the dots
-calls.forEach((_, index) => {
-  const dot = document.createElement('span');
-  dot.classList.add('dot');
-  dot.addEventListener('click', () => setActiveCall(index));
-  dotsContainer.appendChild(dot);
-});
-
-// Initialize the first call as active
-calls[0].classList.add('active');
-dotsContainer.children[0].classList.add('active');
-
-// Set the active call and update the dots
-function setActiveCall(index) {
-  calls.forEach((call, i) => {
-    call.classList.toggle('active', i === index);
-    dotsContainer.children[i].classList.toggle('active', i === index);
-  });
-}
 
 // Handle the scroll animation
 let scrollTimeout;
