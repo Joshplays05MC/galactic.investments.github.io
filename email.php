@@ -9,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $to = "brynley.bp@gmail.com"; // Your Email address
     $from = $_POST['email']; // Sender's Email address
     $name = $_POST['name'];
-    $subject = "Thank you for contacting Galactic AIO";
-    $message = "Dear $name,\n\nThank you for reaching out to us. We have received your message and will get back to you shortly.\n\nBest regards,\nGalactic AIO Team";
+    $subject = "Thank you for contacting Galactic Investments";
+    $message = "Dear $name,\n\nThank you for reaching out to us. We have received your message and will get back to you shortly.\n\nBest regards,\nGalactic Investments Team";
 
     $mail = new PHPMailer(true);
 
