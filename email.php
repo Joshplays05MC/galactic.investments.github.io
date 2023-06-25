@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'path/to/PHPMailer/src/PHPMailer.php';
-require 'path/to/PHPMailer/src/Exception.php';
-require 'path/to/PHPMailer/src/SMTP.php'; // Add this line
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/SMTP.php'; // Add this line
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $to = "brynley.bp@gmail.com"; // Your Email address
