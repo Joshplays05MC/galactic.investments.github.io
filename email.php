@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->addReplyTo($from, $name);
 
         // Content
-        $mail->isHTML(false);
+        $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = $message;
         $mail->CharSet = 'UTF-8';
