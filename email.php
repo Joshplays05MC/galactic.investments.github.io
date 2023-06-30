@@ -1,19 +1,38 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
 if(isset($_POST["send"])){
     $name = $_POST["name"];
     $email = $_POST["email"];
     $message = $_POST["message"];
 
-    $to = "brynley.bp@gmail.com";
-    $subject = "Message from Contact Form";
-    $headers = "From: $name <$email>\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/html\r\n";
+    $mail = new PHPMailer(true);
 
-    if (mail($to, $subject, $message, $headers)) {
-        echo "<script>alert('Email sent'); window.location.href = 'index.html';</script>";
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'brynley.bp@gmail.com';
+    $mail->Password = 'zvkovilysqsezypi';
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
+
+    $mail->setFrom('brynley.bp@gmail.com');
+    $mail->addAddress($email);
+
+    $mail->isHTML(true);
+
+    $mail->Subject = "Message from Contact Form";
+    $mail->Body = "Name: $name<br>Email: $email<br>Message: $message<br>";
+
+    if ($mail->send()) {
+        echo "Email sent";
     } else {
-        echo "<script>alert('Email could not be sent'); window.location.href = 'index.html';</script>";
+        echo "didnt work loser";
     }
 }
 ?>
