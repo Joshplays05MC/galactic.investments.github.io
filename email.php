@@ -6,34 +6,44 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/SMTP.php';
 
+// Load SMTP configuration from a separate file
+require 'config.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Validate form input
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+
+    if (!$email || !$name || !$message) {
+        echo json_encode(['status' => 'error', 'message' => 'Invalid form data. Please check your inputs.']);
+        exit;
+    }
+
     $to = "brynley.bp@gmail.com"; // Your Email address
-    $from = $_POST['email']; // Sender's Email address
-    $name = $_POST['name'];
     $subject = "Thank you for contacting Galactic Investments";
-    $message = "Dear $name,\n\nThank you for reaching out to us. We have received your message and will get back to you shortly.\n\nBest regards,\nGalactic Investments Team";
 
     $mail = new PHPMailer(true);
 
     try {
         // Server settings
         $mail->isSMTP(); // Set mailer to use SMTP
-        $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
+        $mail->Host = $smtpHost; // Read from config file
         $mail->SMTPAuth = true; // Enable SMTP authentication
-        $mail->Username = 'brynley.bp@gmail.com'; // Your Gmail address
-        $mail->Password = 'zvkovilysqsezypi'; // Your Gmail app password
-        $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = 465; // TCP port to connect to
+        $mail->Username = $smtpUsername; // Read from config file
+        $mail->Password = $smtpPassword; // Read from config file
+        $mail->SMTPSecure = $smtpSecure; // Read from config file
+        $mail->Port = $smtpPort; // Read from config file
 
         // Recipients
-        $mail->setFrom('brynley.bp@gmail.com', 'Galactic Investments');
+        $mail->setFrom($smtpUsername, 'Galactic Investments');
         $mail->addAddress($to);
-        $mail->addReplyTo($from, $name);
+        $mail->addReplyTo($email, $name);
 
         // Content
         $mail->isHTML(true);
         $mail->Subject = $subject;
-        $mail->Body = $message;
+        $mail->Body = "Dear $name,<br><br>Thank you for reaching out to us. We have received your message and will get back to you shortly.<br><br>Best regards,<br>Galactic Investments Team";
         $mail->CharSet = 'UTF-8';
 
         $mail->send();
@@ -41,7 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['status' => 'success', 'message' => 'Thank you for contacting us! We will be in touch shortly.']);
         exit;
     } catch (Exception $e) {
-        echo json_encode(['status' => 'error', 'message' => 'An error occurred while sending the message.']);
+        // Log the error
+        error_log('Email sending failed: ' . $mail->ErrorInfo);
+
+        echo json_encode(['status' => 'error', 'message' => 'An error occurred while sending the message. Please try again later.']);
         exit;
     }
 }
