@@ -27,7 +27,7 @@ if(isset($_POST["send"])){
     $mail->isHTML(true);
 
     $mail->Subject = "Message from Contact Form";
-    $mail->Body = "Name: $name<br>Email: $email<br>Message: $message";
+    $mail->Body = "Name: $name<br>Email: $email<br>Message: $message<br>";
 
     if ($mail->send()) {
         echo "<script>alert('Email sent'); window.location.href = 'index.html';</script>";
