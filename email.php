@@ -30,9 +30,9 @@ if(isset($_POST["send"])){
     $mail->Body = "Name: $name<br>Email: $email<br>Message: $message<br>";
 
     if ($mail->send()) {
-        echo "<script>alert('Email sent'); window.location.href = 'index.html';</script>";
+        echo "Email sent";
     } else {
-        echo "<script>alert('Email could not be sent'); window.location.href = 'index.html';</script>";
+        echo "didnt work loser";
     }
 }
 ?>
