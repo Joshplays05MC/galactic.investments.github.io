@@ -295,6 +295,7 @@
   
         var form = $(this);
         var url = form.attr('action');
+        var messageContainer = $('#message');
   
         $.ajax({
           type: 'POST',
@@ -302,16 +303,22 @@
           data: form.serialize(),
           dataType: 'json',
           success: function(response) {
-            $('#message').text(response.message);
+            messageContainer.text(response.message);
             form.trigger('reset');
+  
+            // Clear the message after 5 seconds
+            setTimeout(function() {
+              messageContainer.text('');
+            }, 5000);
           },
           error: function() {
-            $('#message').text('An error occurred while sending the message.');
+            messageContainer.text('An error occurred while sending the message.');
           }
         });
       });
     });
   </script>
+
   
 
   <footer>
