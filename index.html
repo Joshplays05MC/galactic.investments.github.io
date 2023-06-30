@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galactic Investments</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Galactic AIO</title>
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -42,32 +42,86 @@
   </nav>
 
   <section id="home" class="hero reveal">
-    <h1>WELCOME TO GALACTIC INVESTMENTS</h1>
-    <p>The ultimate destination for premium crypto trading</p>
-    <p>and NFT call insights.</p>
+    <div class="bg-animation">
+      <h1>Welcome to Galactic Investments</h1>
+      <p>WE ARE A <span class="typed-text"></span><span class="typing-cursor">|</span></p>
+    </div>
     <a href="#services" class="btn">Get Started</a>
   </section>
-  
+
+  <script>
+    // Typed Text Animation
+    const typedTextSpan = document.querySelector('.typed-text');
+    const typingCursor = document.querySelector('.typing-cursor');
+    const textArray = ['TEAM OF CRYPTO INVESTORS', 'TEAM OF NFT MINTERS', 'TEAM OF CRYPTO CALLERS'];
+    const typingDelay = 100;
+    const erasingDelay = 50;
+    const newTextDelay = 1000;
+    let textArrayIndex = 0;
+    let charIndex = 0;
+    let isTyping = true;
+
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } else {
+        isTyping = false;
+        typingCursor.style.display = 'none';
+        setTimeout(erase, newTextDelay);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } else {
+        isTyping = true;
+        typingCursor.style.display = 'inline';
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) {
+          textArrayIndex = 0;
+        }
+        setTimeout(type, typingDelay + 1100);
+      }
+    }
+
+    function toggleCursor() {
+      typingCursor.style.visibility = isTyping ? 'visible' : 'hidden';
+      setTimeout(toggleCursor, 500);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (textArray.length) {
+        setTimeout(type, newTextDelay + 250);
+        toggleCursor();
+      }
+    });
+  </script>
 
   <section id="services" class="services">
     <h2>OUR SERVICES</h2>
     <div class="services-container reveal">
       <div class="service">
-        <h3>Crypto & NFT calls</h3>
-        <p>Gain access to our exclusive  community where you'll receive high-win crypto trading and NFT calls and valuable insights.</p>
-        <p class="price">$100/month</p>
-        <a href="#contact" class="btn">Contact Us</a>
-      </div>
-      <div class="service">
-        <h3>Private Network Access & auto trading</h3>
-        <p>Automate your trading with access to our private netweork, while also gaining an advanced script that places trades for you based on signals provided by us.</p>
+        <h3>Discord Access</h3>
+        <p>Gain access to our exclusive Discord community where you'll receive high-win crypto trading calls and valuable insights.</p>
         <p class="price">$500/month</p>
         <a href="#contact" class="btn">Contact Us</a>
       </div>
       <div class="service">
-        <h3>NFT botting software & help</h3>
-        <p>Supercharge your NFT trading with our package that includes NFT botting software with guidance provided, maximizing your profits.</p>
-        <p class="price">$2,500</p>
+        <h3>Auto Trading Script</h3>
+        <p>Automate your trading with our advanced script that places trades for you based on signals provided by us.</p>
+        <p class="status">(COMING SOON)</p>
+        <p class="price">$150/month</p>
+        <a href="#contact" class="btn">Contact Us</a>
+      </div>
+      <div class="service">
+        <h3>Combo Package</h3>
+        <p>Get the best of both worlds with our combo package that includes Discord access and the auto trading script for maximum profits.</p>
+        <p class="price">$599/month</p>
         <a href="#contact" class="btn">Contact Us</a>
       </div>
     </div>
@@ -195,11 +249,11 @@
     <div class="container reveal">
       <div class="about-container">
         <div class="about-img">
-          <a href="https://cdn.discordapp.com/attachments/1070034887526064279/1121293567747444847/Screenshot_2023-06-22_at_9.13.57_AM.png" data-lightbox="models" data-title="An example call from us.">
-            <img src="https://cdn.discordapp.com/attachments/1070034887526064279/1121293567747444847/Screenshot_2023-06-22_at_9.13.57_AM.png" alt="Call 1">
+          <a href="https://cdn.discordapp.com/attachments/1070034887526064279/1121293567747444847/Screenshot_2023-06-22_at_9.13.57_AM.png" data-lightbox="models" data-title="Caption1">
+            <img src="https://cdn.discordapp.com/attachments/1070034887526064279/1121293567747444847/Screenshot_2023-06-22_at_9.13.57_AM.png" alt="Image 1">
           </a>
-          <a href="https://cdn.discordapp.com/attachments/1070034887526064279/1121420975746068500/Screenshot_2023-06-22_at_5.46.03_PM.png" data-lightbox="models" data-title="An example call from us.">
-            <img src="https://cdn.discordapp.com/attachments/1070034887526064279/1121420975746068500/Screenshot_2023-06-22_at_5.46.03_PM.png" alt="Call 2">
+          <a href="https://cdn.discordapp.com/attachments/1070034887526064279/1121420975746068500/Screenshot_2023-06-22_at_5.46.03_PM.png" data-lightbox="models" data-title="Caption2">
+            <img src="https://cdn.discordapp.com/attachments/1070034887526064279/1121420975746068500/Screenshot_2023-06-22_at_5.46.03_PM.png" alt="Image 2">
           </a>
         </div>
         <div class="about-text">
@@ -211,7 +265,7 @@
           <p>At Galactic Investments, we prioritize customer satisfaction and strive to deliver the highest quality trade calls.</p>
           <p>With our comprehensive research and personalized approach, we aim to maximize your trading success.</p>
           <p>Trust Galactic Investments to guide you towards profitable trading strategies and financial growth.</p>
-          <a href="https://twitter.com/GalacticWeb3" class="btn">Learn More About Us</a>
+          <a href="https://twitter.com/your_twitter_profile" class="btn">Learn More About Us</a>
         </div>
       </div>
     </div>
@@ -220,20 +274,44 @@
   
   
   
-<section id="contact" class="contact">
-  <h2>CONTACT US</h2>
-  <div class="reveal">
-    <form id="contact-form" method="POST" action="email.php">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-    <div id="message"></div>
-  </div>
-</section>
-
-
+  <section id="contact" class="contact">
+    <h2>CONTACT US</h2>
+    <div class="reveal">
+      <form id="contact-form" method="POST" action="send_email.php">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <div id="message"></div>
+    </div>
+  </section>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#contact-form').submit(function(e) {
+        e.preventDefault();
+  
+        var form = $(this);
+        var url = form.attr('action');
+  
+        $.ajax({
+          type: 'POST',
+          url: url,
+          data: form.serialize(),
+          dataType: 'json',
+          success: function(response) {
+            $('#message').text(response.message);
+            form.trigger('reset');
+          },
+          error: function() {
+            $('#message').text('An error occurred while sending the message.');
+          }
+        });
+      });
+    });
+  </script>
   
 
   <footer>
