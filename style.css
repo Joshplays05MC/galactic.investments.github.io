@@ -262,7 +262,7 @@ nav {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: left; /*changed*/
     padding: 100px 0;
     color: #fff;
     position: relative;
