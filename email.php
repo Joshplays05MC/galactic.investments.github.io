@@ -1,42 +1,38 @@
 <?php
-// Import PHPMailer classes into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require_once 'vendor/autoload.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-$mail = new PHPMailer(true);
-$mail->isSMTP(); // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
-$mail->SMTPAuth = true; // Enable SMTP authentication
-$mail->Username = 'brynley.bp@gmail.com'; // Your Gmail address
-$mail->Password = 'zvkovilysqsezypi'; // Your Gmail app password
-$mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465; // TCP port to connect to
-// Sender information
-$mail->setFrom('noreply@galactic.investments.com', 'Galactic Investments');
+if (isset($_POST["send"])) {
+    $mail = new PHPMailer(true);
+    
+    $mail->isSMTP(); // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true; // Enable SMTP authentication
+    $mail->Username = 'brynley.bp@gmail.com'; // Your Gmail address
+    $mail->Password = 'zvkovilysqsezypi'; // Your Gmail app password
+    $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 465; // TCP port to connect to
+    
+    // Sender information
+    $mail->setFrom('brynley.bp@gmail.com');
+    $mail->addAddress($_POST["email"]);
 
-// Receiver address and name
-$mail->addAddress('R', 'RECEPIENT_NAME');
+    $mail->isHTML(true);
 
-// Add CC or BCC
-// $mail->addCC('email@mail.com');
-// $mail->addBCC('user@mail.com');
+    $mail->Subject = $_POST["subject"];
+    $mail->Body = $_POST["message"];
 
+    $mail->send();
 
-$mail->isHTML(true);
-
-$mail->Subject = 'PHPMailer SMTP test';
-$mail->Body    = "<h4>PHPMailer the awesome Package</h4>
-<b>PHPMailer is working fine for sending mail</b>
-<p>This is a tutorial to guide you on PHPMailer integration</p>";
-
-// Send mail
-if (!$mail->send()) {
-    echo 'Email not sent. An error was encountered: ' . $mail->ErrorInfo;
-} else {
-    echo 'Message has been sent.';
+    echo "
+    <script>
+    alert('sent');
+    document.location.href = 'index.html';
+    </script>
+    ";
 }
-
-$mail->smtpClose();
+?>
