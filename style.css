@@ -295,7 +295,7 @@ nav {
     outline: none;
     transition: 0.4s;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: left;
     text-align: left;
     font-weight: bold;
