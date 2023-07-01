@@ -78,7 +78,7 @@
       let nextIndex = (textIndex + 1) % textArray.length;
       let nextText = textArray[nextIndex];
   
-      let switchDelay = newTextDelay / (nextText.length + 1);
+      let switchDelay = 100; // Decreased switchDelay value for faster switching
   
       for (let i = 0; i <= nextText.length; i++) {
         setTimeout(function () {
@@ -88,10 +88,10 @@
           }
         }, i * switchDelay);
       }
-  
-      setTimeout(erase, newTextDelay + switchDelay * nextText.length);
-      textIndex = nextIndex;
-    }
+    
+        setTimeout(erase, newTextDelay + switchDelay * nextText.length);
+        textIndex = nextIndex;
+     }
   
     function erase() {
       let currentText = typedTextSpan.textContent;
