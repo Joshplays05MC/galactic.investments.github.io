@@ -78,18 +78,19 @@
       let nextIndex = (textIndex + 1) % textArray.length;
       let nextText = textArray[nextIndex];
   
-      let switchDelay = 100; // Decreased switchDelay value for faster switching
+      let switchDelay = 50; // Adjust the switchDelay value for faster switching
   
-      for (let i = 0; i <= nextText.length; i++) {
+      let displayText = currentText + nextText;
+      let eraseIndex = displayText.length;
+  
+      for (let i = displayText.length; i >= currentText.length; i--) {
         setTimeout(function () {
-          typedTextSpan.textContent = currentText + nextText.substring(0, i);
-          if (i === nextText.length) {
-            isTyping = true;
-          }
-        }, i * switchDelay);
+          typedTextSpan.textContent = displayText.substring(0, i);
+          eraseIndex = i;
+        }, (displayText.length - i) * switchDelay);
       }
   
-      setTimeout(erase, newTextDelay + switchDelay * nextText.length);
+      setTimeout(erase, newTextDelay + (eraseIndex - currentText.length) * switchDelay);
       textIndex = nextIndex;
     }
   
