@@ -78,7 +78,7 @@
       let nextIndex = (textIndex + 1) % textArray.length;
       let nextText = textArray[nextIndex];
   
-      let switchDelay = 150; // Adjust this value to control the appearance speed of switching words
+      let switchDelay = typingDelay;
   
       for (let i = 0; i <= nextText.length; i++) {
         setTimeout(function () {
@@ -118,7 +118,6 @@
       }
     });
   </script>
-
 
 
 
