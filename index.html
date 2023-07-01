@@ -41,66 +41,67 @@
     </div>
   </nav>
 
-  <section id="home" class="hero reveal">
-    <div class="bg-animation">
-      <h1>Welcome to Galactic Investments</h1>
-      <p><span class="typed-text"></span><span class="typing-cursor">|</span></p>
-    </div>
-    <a href="#services" class="btn">Get Started</a>
-  </section>
+<section id="home" class="hero reveal">
+  <div class="bg-animation">
+    <h1>Welcome to Galactic Investments</h1>
+    <p><span class="typed-text"></span><span class="typing-cursor">|</span></p>
+  </div>
+  <a href="#services" class="btn">Get Started</a>
+</section>
 
-  <script>
-    // Typed Text Animation
-    const typedTextSpan = document.querySelector('.typed-text');
-    const typingCursor = document.querySelector('.typing-cursor');
-    const textArray = ['EXPERIENCE THE POWER OF OUR EXTENSIVE NETWORK, CONNECTING ENTREPRENEURS, HUSTLERS, TRADERS, DEVELOPERS, AND INDUSTRY LEADERS FOR UNPARALLELED GROWTH'];
-    const typingDelay = 30;
-    const erasingDelay = 40;
-    const newTextDelay = 1000;
-    let textArrayIndex = 0;
-    let charIndex = 0;
-    let isTyping = true;
+<script>
+  // Typed Text Animation
+  const typedTextSpan = document.querySelector('.typed-text');
+  const typingCursor = document.querySelector('.typing-cursor');
+  const textArray = ['EXPERIENCE THE POWER OF OUR EXTENSIVE NETWORK, CONNECTING ENTREPRENEURS, HUSTLERS, TRADERS, DEVELOPERS, AND INDUSTRY LEADERS FOR UNPARALLELED GROWTH'];
+  const typingDelay = 30;
+  const erasingDelay = 30;
+  const newTextDelay = 2000;
+  let textArrayIndex = 0;
+  let charIndex = 0;
+  let isTyping = true;
 
-    function type() {
-      if (charIndex < textArray[textArrayIndex].length) {
-        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingDelay);
-      } else {
-        isTyping = false;
-        typingCursor.style.display = 'none';
-        setTimeout(erase, newTextDelay);
-      }
+  function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+      typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    } else {
+      isTyping = false;
+      typingCursor.style.display = 'none';
+      setTimeout(erase, newTextDelay);
     }
+  }
 
-    function erase() {
-      if (charIndex > 0) {
-        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, erasingDelay);
-      } else {
-        isTyping = true;
-        typingCursor.style.display = 'inline';
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) {
-          textArrayIndex = 0;
-        }
-        setTimeout(type, typingDelay + 1100);
+  function erase() {
+    if (charIndex > 0) {
+      typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, erasingDelay);
+    } else {
+      isTyping = true;
+      typingCursor.style.display = 'inline';
+      textArrayIndex++;
+      if (textArrayIndex >= textArray.length) {
+        textArrayIndex = 0;
       }
+      setTimeout(type, typingDelay);
     }
+  }
 
-    function toggleCursor() {
-      typingCursor.style.visibility = isTyping ? 'visible' : 'hidden';
-      setTimeout(toggleCursor, 500);
+  function toggleCursor() {
+    typingCursor.style.visibility = isTyping ? 'visible' : 'hidden';
+    setTimeout(toggleCursor, 500);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (textArray.length) {
+      setTimeout(type, newTextDelay);
+      toggleCursor();
     }
+  });
+</script>
 
-    document.addEventListener('DOMContentLoaded', function () {
-      if (textArray.length) {
-        setTimeout(type, newTextDelay + 250);
-        toggleCursor();
-      }
-    });
-  </script>
 
 <section id="services" class="services">
   <h2>OUR SERVICES</h2>
