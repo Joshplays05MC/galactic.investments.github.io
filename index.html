@@ -48,77 +48,77 @@
     </div>
     <a href="#services" class="btn">Get Started</a>
   </section>
-  
+
   <script>
-    // Typed Text Animation
-    const typedTextSpan = document.querySelector('.typed-text');
-    const typingCursor = document.querySelector('.typing-cursor');
-    const initialText = 'EXPERIENCE THE POWER OF OUR ';
-    const textArray = ['EXTENSIVE NETWORK', 'ENTREPRENEURS', 'HUSTLERS', 'TRADERS', 'DEVELOPERS', 'INDUSTRY LEADERS'];
-    const typingDelay = 50;
-    const erasingDelay = 30;
-    const newTextDelay = 2000;
-    let textIndex = 0;
-    let charIndex = 0;
-    let isTyping = true;
-  
-    function type() {
-      if (charIndex < initialText.length) {
-        typedTextSpan.textContent += initialText.charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingDelay);
-      } else {
-        isTyping = false;
-        setTimeout(switchText, newTextDelay);
-      }
+  // Typed Text Animation
+  const typedTextSpan = document.querySelector('.typed-text');
+  const typingCursor = document.querySelector('.typing-cursor');
+  const initialText = 'EXPERIENCE THE POWER OF OUR ';
+  const textArray = ['EXTENSIVE NETWORK', 'ENTREPRENEURS', 'HUSTLERS', 'TRADERS', 'DEVELOPERS', 'INDUSTRY LEADERS'];
+  const typingDelay = 50;
+  const erasingDelay = 30;
+  const newTextDelay = 2000;
+  let textIndex = 0;
+  let charIndex = 0;
+  let isTyping = true;
+
+  function type() {
+    if (charIndex < initialText.length) {
+      typedTextSpan.textContent += initialText.charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    } else {
+      isTyping = false;
+      setTimeout(switchText, newTextDelay);
     }
-  
-    function switchText() {
-      let currentText = typedTextSpan.textContent;
-      let nextIndex = (textIndex + 1) % textArray.length;
-      let nextText = textArray[nextIndex];
-  
-      let switchDelay = 50; // Adjust the switchDelay value for faster switching
-  
-      let displayText = currentText + nextText;
-      let eraseIndex = displayText.length;
-  
-      for (let i = displayText.length; i >= currentText.length; i--) {
-        setTimeout(function () {
-          typedTextSpan.textContent = displayText.substring(0, i);
-          eraseIndex = i;
-        }, (displayText.length - i) * switchDelay);
-      }
-  
-      setTimeout(erase, newTextDelay + (eraseIndex - currentText.length) * switchDelay);
-      textIndex = nextIndex;
+  }
+
+  function switchText() {
+    let currentText = typedTextSpan.textContent;
+    let nextIndex = (textIndex + 1) % textArray.length;
+    let nextText = textArray[nextIndex];
+
+    let switchDelay = typingDelay;
+
+    for (let i = 0; i <= nextText.length; i++) {
+      setTimeout(function () {
+        typedTextSpan.textContent = currentText + nextText.substring(0, i);
+        if (i === nextText.length) {
+          isTyping = true;
+        }
+      }, i * switchDelay);
     }
-  
-    function erase() {
-      let currentText = typedTextSpan.textContent;
-      let eraseDelay = erasingDelay;
-  
-      for (let i = currentText.length; i >= initialText.length; i--) {
-        setTimeout(function () {
-          typedTextSpan.textContent = currentText.substring(0, i);
-        }, (currentText.length - i) * eraseDelay);
-      }
-  
-      setTimeout(type, initialText.length * eraseDelay);
+
+    setTimeout(erase, newTextDelay + switchDelay * nextText.length);
+    textIndex = nextIndex;
+  }
+
+  function erase() {
+    let currentText = typedTextSpan.textContent;
+    let eraseDelay = erasingDelay;
+
+    for (let i = currentText.length; i >= initialText.length; i--) {
+      setTimeout(function () {
+        typedTextSpan.textContent = currentText.substring(0, i);
+      }, (currentText.length - i) * eraseDelay);
     }
-  
-    function toggleCursor() {
-      typingCursor.style.visibility = isTyping ? 'visible' : 'hidden';
-      setTimeout(toggleCursor, 500);
+
+    setTimeout(type, initialText.length * eraseDelay);
+  }
+
+  function toggleCursor() {
+    typingCursor.style.visibility = isTyping ? 'visible' : 'hidden';
+    setTimeout(toggleCursor, 500);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (textArray.length) {
+      toggleCursor();
+      setTimeout(type, typingDelay);
     }
-  
-    document.addEventListener('DOMContentLoaded', function () {
-      if (textArray.length) {
-        toggleCursor();
-        setTimeout(type, typingDelay);
-      }
-    });
+  });
   </script>
+
 
 
 <section id="services" class="services">
