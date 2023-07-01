@@ -223,7 +223,7 @@ nav {
   
   .team-member {
     display: inline-block;
-    width: calc(25% - 40px);
+    width: calc(50% - 40px);
     margin: 0 20px;
     margin-bottom: 30px;
     transition: 0.3s ease;
