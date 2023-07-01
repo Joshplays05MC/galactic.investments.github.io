@@ -122,7 +122,7 @@ nav {
   
   .btn {
     display: inline-block;
-    background-color: #8e24aa;
+    background-color: #6a1b9a;
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
@@ -311,7 +311,7 @@ nav {
   }
   
   .accordion:hover {
-    background-color: #8e24aa;
+    background-color: #6a1b9a;
   }
   
   .pannel {
@@ -497,7 +497,7 @@ nav {
   
   .contact button {
     display: inline-block;
-    background-color: #8e24aa;
+    background-color: #6a1b9a;
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
@@ -643,7 +643,7 @@ section.visible {
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #8e24aa #000000;
+  scrollbar-color: #6a1b9a #000000;
 }
 
 /* Chrome, Edge and Safari */
