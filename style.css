@@ -495,6 +495,10 @@ nav {
     margin-bottom: 20px;
     border-radius: 5px;
   }
+
+  .contact textarea[name="message"] {
+    height: 150px; /* Adjust the value as needed */
+  }
   
   .contact button {
     display: inline-block;
