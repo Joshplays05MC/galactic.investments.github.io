@@ -394,7 +394,7 @@ nav {
     gap: 50px;
     margin-top: 50px;
   }
-
+  
   .about-us h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -426,36 +426,22 @@ nav {
     max-width: 1000px; /* Adjust the max-width to your desired value */
   }
   
-  .about-text h3 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: rgb(255, 255, 255);
-    text-decoration: underline;
-    text-decoration-thickness: 0.01em;
-    text-decoration-color: purple;
-    text-decoration-skip-ink: none;
-    /* Remove the previous display, max-width, overflow, white-space, and text-overflow properties */
-  }
-  
   .about-text p {
     margin-bottom: 20px;
     font-size: 1.2rem;
-    /* Remove the previous display, max-width, overflow, white-space, and text-overflow properties */
   }
   
-  .about-text a.btn {
-    display: inline-block;
-    background-color: #8e24aa;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  .social-media-icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
   }
   
-  .about-text a.btn:hover {
-    background-color: #6a1b9a;
+  .social-media-icons img {
+    width: 40px;
+    height: 40px;
   }
   
   @media screen and (max-width: 768px) {
@@ -478,6 +464,7 @@ nav {
       font-size: 2rem;
     }
   }
+  
   
   
   
