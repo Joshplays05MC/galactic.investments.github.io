@@ -294,10 +294,28 @@ nav {
     overflow: hidden;
     transition: 0.3s ease;
     border: 2px solid rgba(255, 255, 255, 0.3);
- }
+  }
+  
+  .team-member-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 10px 0;
+  }
+  
+  .team-member-divider::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 10px;
+    height: 3px;
+    background-color: #fff;
+  }
   
   .team-member:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .team-member-content {
@@ -310,7 +328,7 @@ nav {
     opacity: 1;
     transition: opacity 0.3s ease;
     backdrop-filter: blur(5px);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.6);
   }
   
   .team-member-content img {
@@ -323,6 +341,7 @@ nav {
   .team-member-content h3,
   .team-member-content p {
     color: #fff;
+    margin-bottom: 5px;
   }
   
   .team-member-overlay {
@@ -332,7 +351,7 @@ nav {
     width: 100%;
     height: 100%;
     padding: 20px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
     opacity: 0;
     transition: opacity 0.3s ease;
     display: flex;
@@ -357,11 +376,40 @@ nav {
     margin-bottom: 5px;
   }
   
-  .team-member-overlay .divider {
+  .team-member-overlay .team-member-divider {
     width: 100%;
     height: 1px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.3);
     margin: 10px 0;
+  }
+  
+  .team-member-overlay .team-member-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px; /* Adjusted positioning */
+    width: 10px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .team-member-overlay .team-member-divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -5px; /* Adjusted positioning */
+    width: 10px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  
+  .team-member-overlay .team-member-divider::before {
+    left: 0;
+  }
+  
+  .team-member-overlay .team-member-divider::after {
+    right: 0;
   }
   
   .team-member-overlay .social-media-icons {
@@ -369,6 +417,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-top: 10px;
   }
   
   .team-member-overlay .social-media-icons img {
@@ -389,13 +438,14 @@ nav {
     .team-members {
       flex-direction: column;
     }
-    
+  
     .team-member {
       width: 100%;
       height: auto;
     }
   }
   
+
 
   
 
