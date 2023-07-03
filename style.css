@@ -350,7 +350,11 @@ border-radius: 10px;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 40px; /* Increase the top margin for spacing */
+}
+
+.btn-buy {
+  margin-top: 20px; /* Add margin to the top of the Buy Now button */
 }
 
 .separator {
@@ -368,6 +372,65 @@ border-radius: 10px;
   transition: background-color 0.3s ease;
 }
 
+
+/* ... existing styles ... */
+
+.glow-on-hover3 {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: linear-gradient(45deg, #9945FF, #14F195);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  animation: pulse 2s infinite;
+}
+
+
+.glow-on-hover3:before {
+  content: '';
+  background: linear-gradient(45deg, #9945FF, #14F195);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover3:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover3:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #9945FF, #14F195);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}
 
 /* Media Query for Mobile Devices */
 @media only screen and (max-width: 767px) {
