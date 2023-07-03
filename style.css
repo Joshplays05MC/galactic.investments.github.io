@@ -611,7 +611,6 @@ nav {
     font-size: 1.2rem;
     width: 100%;
     padding: 2rem 2.5rem;
-    border: none;
     outline: none;
     transition: 0.4s;
     display: flex;
@@ -620,6 +619,7 @@ nav {
     text-align: left;
     font-weight: bold;
     border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
   }
   
   .chevron {
