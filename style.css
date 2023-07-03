@@ -313,6 +313,7 @@ nav {
     text-align: center;
     transition: transform 0.3s ease;
     box-shadow: 0 2px 4px rgba(69, 65, 65, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
   }
   
   .service:hover {
@@ -640,6 +641,7 @@ nav {
     overflow: hidden;
     display: none;
     border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
   }
   
   .pannel p {
