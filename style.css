@@ -39,7 +39,7 @@ display: block;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top right, rgba(47, 20, 80, 0.5), rgba(29, 58, 119, 0.5), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(to top right, rgb(22, 1, 34), rgba(29, 58, 119, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 
@@ -56,22 +56,20 @@ background-color: transparent;
 z-index: 10;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
 
 .logo h2 {
-  color: #ffffff; /* Add this line to set the text color to white */
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #9B51E0, #fffcfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.logo img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
+
+
 
 .nav-links {
   display: flex;
@@ -96,6 +94,7 @@ z-index: 10;
 .nav-links a:hover {
   background: linear-gradient(45deg, #6a1b9a, #37367b);
 }
+
 
 
 .burger {
@@ -130,6 +129,15 @@ z-index: 10;
   font-size: 1.5rem;
   margin-bottom: 30px;
 }
+
+.white-line {
+  border: none;
+  height: 2px;
+  background-color: #fff;
+  width: 50%; /* Adjust the width as needed */
+  margin: 10px auto; /* Adjust the margin as needed */
+}
+
 
 .btn {
 display: inline-block;
@@ -443,6 +451,8 @@ border-radius: 10px;
   }
 }
 
+
+
 /* Media Query for Mobile Devices */
 @media only screen and (max-width: 767px) {
   .services-container {
@@ -515,7 +525,7 @@ border-radius: 10px;
 
 .team-member:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
 .team-member-content {
@@ -648,16 +658,13 @@ border-radius: 10px;
 
 
 
-
-  
-
 .wrapper {
   max-width: 40%;
   margin: auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: left; /*changed*/
+  justify-content: left;
   padding: 100px 0;
   color: #fff;
   position: relative;
@@ -685,7 +692,7 @@ border-radius: 10px;
   cursor: pointer;
   font-size: 1.2rem;
   width: 100%;
-  padding: 2rem 2.5rem;
+  padding: 2rem 3rem; /* Adjusted width */
   border: 2px solid rgba(255, 255, 255, 0.3);
   outline: none;
   transition: 0.4s;
@@ -706,11 +713,11 @@ border-radius: 10px;
 }
 
 .accordion:hover {
-  background-color: linear-gradient(45deg, #6a1b9a, #37367b);
+  background-color: #6a1b9a;
 }
 
 .pannel {
-  padding: 0 2rem 2.5rem 2rem;
+  padding: 0 3rem 2.5rem 2rem; /* Adjusted width */
   background-color: rgba(39, 39, 39, 0.2);
   overflow: hidden;
   display: none;
@@ -728,7 +735,6 @@ border-radius: 10px;
   border: none;
   margin: 10px 0;
 }
-
 
 @media screen and (max-width: 768px) {
   .wrapper{
@@ -749,6 +755,7 @@ border-radius: 10px;
     margin-left: 0;
   }
 }
+
 
 
 
@@ -790,6 +797,8 @@ border-radius: 10px;
   gap: 50px;
   margin-top: 50px;
 }
+
+
 
 .about-us h2 {
   font-size: 2.5rem;
@@ -925,7 +934,7 @@ border-radius: 10px;
 
   /* Footer Styles */
   footer {
-      background-color: transparent;
+      background-color: transparent !important;
       padding: 20px;
       text-align: center;
       color: #fff;
