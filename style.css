@@ -19,6 +19,7 @@ display: block;
 }
 
 
+
 /* ---- particles.js container ---- */
 
 #particles-js {
@@ -52,7 +53,6 @@ padding: 10px;
 top: 0;
 left: 0;
 right: 0;
-background-color: transparent;
 z-index: 10;
 }
 
@@ -149,6 +149,24 @@ padding: 10px 20px;
 border-radius: 5px;
 transition: background-color 0.3s ease;
 }
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
 
 .glow-on-hover {
 width: 220px;
@@ -593,33 +611,22 @@ border-radius: 10px;
   margin: 10px 0;
 }
 
-.team-member-overlay .team-member-divider::before {
+.team-member-overlay .team-member-divider::before,
+.team-member-overlay .team-member-divider::after {
   content: '';
   position: absolute;
   top: 0;
-  left: -5px; /* Adjusted positioning */
   width: 10px;
   height: 3px;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-.team-member-overlay .team-member-divider::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -5px; /* Adjusted positioning */
-  width: 10px;
-  height: 3px;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-
 .team-member-overlay .team-member-divider::before {
-  left: 0;
+  left: -5px;
 }
 
 .team-member-overlay .team-member-divider::after {
-  right: 0;
+  right: -5px;
 }
 
 .team-member-overlay .social-media-icons {
@@ -647,13 +654,45 @@ border-radius: 10px;
 @media screen and (max-width: 768px) {
   .team-members {
     flex-direction: column;
+    align-items: center; /* Center align on mobile */
   }
 
   .team-member {
-    width: 100%;
-    height: auto;
+    width: 300px; /* Set the width to match the PC view */
+    height: 300px; /* Set the height to match the PC view */
+    margin-bottom: 30px; /* Add margin between team members on mobile */
+  }
+
+  .team-member-content {
+    padding: 20px; /* Adjusted padding for mobile */
+  }
+
+  .team-member-overlay {
+    padding: 10px; /* Adjusted padding for mobile */
+  }
+
+  .team-member-overlay h3 {
+    font-size: 24px; /* Adjusted font size for mobile */
+    margin-bottom: 15px; /* Add margin to separate overlay content on mobile */
+  }
+
+  .team-member-overlay p {
+    margin-bottom: 15px; /* Add margin to separate overlay content on mobile */
+  }
+
+  .team-member-overlay .team-member-divider::before,
+  .team-member-overlay .team-member-divider::after {
+    top: 0; /* Adjusted positioning for mobile */
   }
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -861,23 +900,47 @@ border-radius: 10px;
 @media screen and (max-width: 768px) {
   .about-container {
     flex-direction: column;
+    align-items: center;
+    gap: 30px;
     text-align: center;
   }
 
   .about-img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .about-img img {
     width: 100%;
-    align-items: center;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
   }
 
   .about-text {
     width: 100%;
     max-width: 100%;
+    text-align: center;
   }
 
-  .about-text h3 {
-    font-size: 2rem;
+  .about-text p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .social-media-icons {
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .social-media-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
   }
 }
+
+
 
 
 
