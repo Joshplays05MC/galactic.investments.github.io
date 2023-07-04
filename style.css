@@ -1053,39 +1053,3 @@ animation: blink-caret 0.75s infinite;
 }
 
 
-/* Firefox */
-* {
-scrollbar-width: thin;
-scrollbar-color: #6a1b9a #000000;
-}
-
-/* Chrome, Edge and Safari */
-*::-webkit-scrollbar {
-width: 10px;
-width: 10px;
-}
-*::-webkit-scrollbar-track {
-border-radius: 5px;
-background-color: #000000;
-}
-
-*::-webkit-scrollbar-track:hover {
-background-color: #480F39;
-}
-
-*::-webkit-scrollbar-track:active {
-background-color: #8e24aa;
-}
-
-*::-webkit-scrollbar-thumb {
-border-radius: 5px;
-background-color: #8e24aa;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-background-color: #8e24aa;
-}
-
-*::-webkit-scrollbar-thumb:active {
-background-color: #8e24aa;
-}
