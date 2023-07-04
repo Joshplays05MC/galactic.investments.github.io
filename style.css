@@ -22,12 +22,24 @@ display: block;
 /* ---- particles.js container ---- */
 
 #particles-js {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000000; /* Set primary black background color */
+  overflow: hidden;
+}
+
+#particles-js::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top right, rgba(47, 20, 80, 0.5), rgba(29, 58, 119, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 
@@ -83,7 +95,7 @@ z-index: 10;
 }
 
 .nav-links a:hover {
-  background-color: #6a1b9a;
+  background: linear-gradient(45deg, #6a1b9a, #37367b);
 }
 
 
@@ -381,7 +393,7 @@ border-radius: 10px;
   border: none;
   outline: none;
   color: #fff;
-  background: linear-gradient(45deg, #9945FF, #14F195);
+  background: linear-gradient(45deg, #6a1b9a, #37367b);
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -392,7 +404,7 @@ border-radius: 10px;
 
 .glow-on-hover3:before {
   content: '';
-  background: linear-gradient(45deg, #9945FF, #14F195);
+  background: linear-gradient(45deg, #6a1b9a, #37367b);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -417,7 +429,7 @@ border-radius: 10px;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #9945FF, #14F195);
+  background: linear-gradient(45deg, #6a1b9a, #37367b);
   left: 0;
   top: 0;
   border-radius: 10px;
