@@ -49,7 +49,6 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 10px;
-position: fixed; /* Add this line to make the navigation bar fixed */
 top: 0;
 left: 0;
 right: 0;
@@ -926,7 +925,7 @@ border-radius: 10px;
 
   /* Footer Styles */
   footer {
-      background-color: #000;
+      background-color: transparent;
       padding: 20px;
       text-align: center;
       color: #fff;
