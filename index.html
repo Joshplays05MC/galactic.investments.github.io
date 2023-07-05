@@ -21,6 +21,8 @@
 
 
 
+
+
 <body>
   <nav>
     <div class="logo">
@@ -124,7 +126,7 @@
     });
   </script>
 
-
+  
   <section id="services" class="services">
     <div class="container">
       <h2 class="section-title">OUR SERVICES</h2>
@@ -162,11 +164,17 @@
           </div>
           <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NFT_BOTTING" class="glow-on-hover3 btn btn-buy">Buy Now</a>
         </div>
-      </div>
     </div>
   </section>
+
+
+
+
+
   
+
   
+
   
   <section id="about-us" class="about-us">
     <h2>ABOUT US</h2>
@@ -213,9 +221,80 @@
           </div>
         </div>
       </div>
+      <div class="statistics-section">
+        <div class="statistics-stat">
+          <h3 id="snipes">0</h3>
+          <p>Total Sales</p>
+        </div>
+        <div class="statistics-stat">
+          <h3 id="profit">0</h3>
+          <p>Estimated Total Profits</p>
+        </div>
+        <div class="statistics-stat">
+          <h3 id="nfts">0</h3>
+          <p>Total Members</p>
+        </div>
+      </div>
     </div>
     <script src="lightbox-plus-jquery.js"></script>
   </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      function animateValue(element, start, end, duration) {
+        const range = end - start;
+        const increment = range / (duration / 10);
+        let current = start;
+    
+        const timer = setInterval(() => {
+          current += increment;
+          element.textContent = formatNumber(Math.round(current), element.id);
+    
+          if (current >= end) {
+            element.textContent = formatNumber(end, element.id);
+            clearInterval(timer);
+          }
+        }, 10);
+      }
+    
+      function formatNumber(number, elementId) {
+        const formattedNumber = number.toLocaleString(); // Adds commas to the number
+        let numberWithLogo = formattedNumber;
+    
+        if (elementId === "profit") {
+          numberWithLogo = '$' + formattedNumber + "+"; // Adds a dollar logo before the number
+        }
+    
+        return numberWithLogo; // Adds a plus sign after the number
+      }
+    
+      const section = document.querySelector("#about-us");
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.2
+      };
+    
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const snipesElement = document.getElementById("snipes");
+            const profitElement = document.getElementById("profit");
+            const nftsElement = document.getElementById("nfts");
+    
+            animateValue(snipesElement, 0, 40, 1000);
+            animateValue(profitElement, 0, 10000, 1000);
+            animateValue(nftsElement, 0, 25, 1000);
+    
+            observer.unobserve(section);
+          }
+        });
+      }, observerOptions);
+    
+      observer.observe(section);
+    });    
+  </script>
+
   
   
 
