@@ -114,10 +114,6 @@ z-index: 10;
 }
 
 
-
-
-
-
 .burger {
   display: none;
   cursor: pointer;
@@ -340,6 +336,11 @@ border-radius: 10px;
 }
 
 
+
+
+/* SERVICE CODE */
+
+
 .services {
   background-color: transparent;
   padding: 80px 0;
@@ -431,7 +432,6 @@ border-radius: 10px;
 }
 
 
-/* ... existing styles ... */
 
 .glow-on-hover3 {
   width: 220px;
@@ -491,7 +491,6 @@ border-radius: 10px;
 }
 
 
-
 /* Media Query for Mobile Devices */
 @media only screen and (max-width: 767px) {
   .services-container {
@@ -507,7 +506,12 @@ border-radius: 10px;
 }
 
 
-/* Team Section Styles */
+
+
+
+/* Team CODE */
+
+
 .team {
   min-height: 100vh;
   display: flex;
@@ -710,7 +714,7 @@ border-radius: 10px;
 
 
 
-
+/* FAQ CODE */
 
 
 .wrapper {
@@ -805,6 +809,13 @@ border-radius: 10px;
 
 
 
+
+
+
+
+
+
+/* ABOUT US CODE */
 
 .call {
   text-align: center;
@@ -905,6 +916,54 @@ border-radius: 10px;
   transform: scale(1.1);
 }
 
+
+
+/* STATS CODE */
+
+.about-us .statistics-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row; /* Display horizontally */
+  background-color: transparent; /* Set background color to transparent */
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 40px; /* Adjust the margin-top value as needed */
+  border: none; /* Remove the border */
+  width: 95%; /* Adjust the width value as needed */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.about-us .statistics-stat {
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+
+.about-us .statistics-stat h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-us .statistics-stat:last-child::before {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .about-us .statistics-section {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-us .statistics-stat {
+    margin-bottom: 20px;
+  }
+}
+
+
 @media screen and (max-width: 768px) {
   .about-container {
     flex-direction: column;
@@ -951,6 +1010,12 @@ border-radius: 10px;
 
 
 
+
+
+
+
+
+/* CONTACT CODE */
 
 .contact {
   min-height: 100vh;
@@ -1003,18 +1068,28 @@ border-radius: 10px;
   border-color: #8e24aa; /* Set border color to purple */
 }
 
-  /* Footer Styles */
-  footer {
-      background-color: transparent !important;
-      padding: 20px;
-      text-align: center;
-      color: #fff;
-  }
+
+
+
+
+
+/* Footer CODE */
+
+
+
+footer {
+    background-color: transparent !important;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
 
 footer a {
   color: #fff;
   text-decoration: none;
 }
+
+
 
 @media screen and (max-width: 768px) {
   .nav-links {
@@ -1097,7 +1172,7 @@ transform: translateY(0);
 position: relative;
 transform: translateY(150px);
 opacity: 0;
-transition: all 2s ease;
+transition: all 1s ease;
 }
 
 .reveal.active {
@@ -1131,5 +1206,6 @@ animation: blink-caret 0.75s infinite;
 0%, 100% { opacity: 0; }
 50% { opacity: 1; }
 }
+
 
 
