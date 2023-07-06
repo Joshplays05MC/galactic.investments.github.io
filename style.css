@@ -59,7 +59,7 @@ z-index: 10;
 
 .logo h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -246,7 +246,7 @@ border-radius: 10px;
 
 .glow-on-hover1:before {
   content: '';
-  background: linear-gradient(45deg, #ffffff, #ffffff);
+  background: linear-gradient(45deg, #6a1b9a, #37367b);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -292,7 +292,7 @@ border-radius: 10px;
 
 .glow-on-hover2:before {
   content: '';
-  background: linear-gradient(45deg, #ffffff, #ffffff);
+  background: linear-gradient(45deg, #37367b, #6a1b9a);
   position: absolute;
   top: -2px;
   left: -2px;
