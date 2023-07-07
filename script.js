@@ -18,9 +18,19 @@ const navSlide = () => {
 
     // Burger Animation
     burger.classList.toggle('toggle');
-
-    
   });
+
+  // Close Nav when a Nav Link is clicked
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      // Check if navigation menu is active
+      if (nav.classList.contains('nav-active')) {
+        nav.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+      }
+    });
+  });
+
 
   // Smooth Scroll
   navLinks.forEach(link => {
