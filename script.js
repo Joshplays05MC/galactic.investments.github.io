@@ -50,7 +50,24 @@ const navSlide = () => {
 
 navSlide();
 
+
+window.addEventListener("scroll", function() {
+  const navbar = document.querySelector("nav");
+  navbar.classList.toggle("scrolled", window.scrollY > 0);
+});
+
+const burger = document.querySelector(".burger");
+const navLinks = document.querySelector(".nav-links");
+
+burger.addEventListener("click", function() {
+  navLinks.classList.toggle("show");
+});
+
+
+
 window.addEventListener('scroll', reveal);
+
+
 
 function reveal(){
   var reveals = document.querySelectorAll('.reveal');
