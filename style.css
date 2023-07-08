@@ -64,6 +64,17 @@ nav {
   left: 0;
   right: 0;
   z-index: 10;
+  position: fixed; /* Fixed position for the navigation bar */
+  backdrop-filter: blur(0); /* Initial blur effect set to 0 */
+  background-color: transparent; /* Initial transparent background color */
+  border-bottom: 1px solid transparent; /* Initial transparent border */
+  transition: background-color 0.3s ease, border-bottom 0.3s ease, backdrop-filter 0.3s ease; /* Add transition for smooth effect */
+}
+
+nav.scrolled {
+  backdrop-filter: blur(10px); /* Blur effect when scrolled */
+  background-color: linear-gradient(45deg, #9B51E0, #fffcfc);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .nav-links {
@@ -106,7 +117,6 @@ nav {
   transform: scaleX(1);
 }
 
-
 .burger {
   display: none;
   cursor: pointer;
@@ -120,21 +130,25 @@ nav {
   transition: transform 0.3s ease;
 }
 
-
 @media screen and (max-width: 768px) {
   .nav-links {
-    position: fixed;
-    right: 0;
-    top: 0; /* Adjust the top position to cover the entire screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: rgba(0, 0, 0, 0.9);
     height: 100vh;
     width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    position: fixed;
+    top: 0;
+    right: 0;
     transform: translateX(100%);
     transition: transform 0.3s ease-in;
-    z-index: 11; /* Update z-index to a non-empty value */
+    z-index: 11;
+  }
+
+  .nav-links.show {
+    transform: translateX(0);
   }
 
   .nav-links li {
@@ -145,7 +159,6 @@ nav {
     display: block;
   }
 }
-
 
 .nav-active {
   transform: translateX(0%);
