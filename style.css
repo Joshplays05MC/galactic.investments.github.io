@@ -117,18 +117,6 @@ nav.scrolled {
   transform: scaleX(1);
 }
 
-.burger {
-  display: none;
-  cursor: pointer;
-}
-
-.burger div {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 5px;
-  transition: transform 0.3s ease;
-}
 
 @media screen and (max-width: 768px) {
   .nav-links {
@@ -157,9 +145,6 @@ nav.scrolled {
     opacity: 0;
   }
 
-  .burger {
-    display: block;
-  }
 }
 
 .nav-active {
