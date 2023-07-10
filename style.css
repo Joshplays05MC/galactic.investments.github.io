@@ -226,7 +226,7 @@ height: 50px;
 border: none;
 outline: none;
 color: #fff;
-background:  #6a1b9a, #000;
+background:  #000000, #000;
 cursor: pointer;
 position: relative;
 z-index: 0;
@@ -235,7 +235,7 @@ border-radius: 10px;
 
 .glow-on-hover:before {
 content: '';
-background: linear-gradient(45deg, #6a1b9a, #000);
+background: linear-gradient(45deg, #410154, #000);
 position: absolute;
 top: -2px;
 left: -2px;
