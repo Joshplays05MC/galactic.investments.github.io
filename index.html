@@ -40,85 +40,104 @@
 
   <section id="home" class="hero reveal">
     <div class="bg-animation">
-      <h1>Welcome to Galactic Investments<br>
-        Enter the new era of trading excellence
+      <div class="background-image"></div>
+      <div class="content">
+        <h1>Welcome to Galactic Investments<br>
+          <span class="highlight">Enter the era of trading excellence</span>
+        </h1>
+        <p><span class="text"></span></p>
         <hr class="white-line">
-      </h1>
-      <p><span class="typed-text"></span><span class="typing-cursor">|</span></p>
+        <a href="#services" class="glow-on-hover btn" type="btn">EXPLORE</a>
+      </div>
     </div>
-    <a href="#services" class="glow-on-hover btn" type="btn">Explore</a>
+    <i class="fa fa-angle-down arrow"></i>
   </section>
-  
   
 
   <script>
-    // Typed Text Animation
-    const typedTextSpan = document.querySelector('.typed-text');
-    const typingCursor = document.querySelector('.typing-cursor');
-    const initialText ='Experience the power of our ';
-    const textArray = ['extensive network.', 'entrepreneurs.', 'hustlers.', 'traders.', 'developers.', 'industry leaders.'];
-    const typingDelay = 50;
-    const erasingDelay = 50;
-    const newTextDelay = 500;
-    let textIndex = 0;
-    let charIndex = 0;
-    let isTyping = true;
-  
-    function type() {
-      if (charIndex < initialText.length) {
-        typedTextSpan.textContent += initialText.charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingDelay);
+// ——————————————————————————————————————————————————
+// TextScramble
+// ——————————————————————————————————————————————————
+
+class TextScramble {
+  constructor(el) {
+    this.el = el
+    this.chars = '!<>-_\\/[]{}—=+*^?#________'
+    this.update = this.update.bind(this)
+  }
+  setText(newText) {
+    const oldText = this.el.innerText
+    const length = Math.max(oldText.length, newText.length)
+    const promise = new Promise((resolve) => this.resolve = resolve)
+    this.queue = []
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || ''
+      const to = newText[i] || ''
+      const start = Math.floor(Math.random() * 40)
+      const end = start + Math.floor(Math.random() * 40)
+      this.queue.push({ from, to, start, end })
+    }
+    cancelAnimationFrame(this.frameRequest)
+    this.frame = 0
+    this.update()
+    return promise
+  }
+  update() {
+    let output = ''
+    let complete = 0
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i]
+      if (this.frame >= end) {
+        complete++
+        output += to
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar()
+          this.queue[i].char = char
+        }
+        output += `<span class="dud">${char}</span>`
       } else {
-        isTyping = false;
-        setTimeout(switchText, newTextDelay);
+        output += from
       }
     }
-  
-    function switchText() {
-      let currentText = typedTextSpan.textContent;
-      let nextIndex = (textIndex + 1) % textArray.length;
-      let nextText = textArray[nextIndex];
-  
-      let switchDelay = typingDelay;
-  
-      for (let i = 0; i <= nextText.length; i++) {
-        setTimeout(function () {
-          typedTextSpan.textContent = currentText + nextText.substring(0, i);
-          if (i === nextText.length) {
-            isTyping = true;
-          }
-        }, i * switchDelay);
-      }
-  
-      setTimeout(erase, newTextDelay + switchDelay * nextText.length);
-      textIndex = nextIndex;
+    this.el.innerHTML = output
+    if (complete === this.queue.length) {
+      this.resolve()
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update)
+      this.frame++
     }
-  
-    function erase() {
-      let currentText = typedTextSpan.textContent;
-      let eraseDelay = erasingDelay;
-  
-      for (let i = currentText.length; i >= initialText.length; i--) {
-        setTimeout(function () {
-          typedTextSpan.textContent = currentText.substring(0, i);
-        }, (currentText.length - i) * eraseDelay);
-      }
-  
-      setTimeout(type, initialText.length * eraseDelay);
-    }
-  
-    function toggleCursor() {
-      typingCursor.style.visibility = isTyping ? 'visible' : 'hidden';
-      setTimeout(toggleCursor, 500);
-    }
-  
-    document.addEventListener('DOMContentLoaded', function () {
-      if (textArray.length) {
-        toggleCursor();
-        setTimeout(type, typingDelay);
-      }
-    });
+  }
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)]
+  }
+}
+
+// ——————————————————————————————————————————————————
+// Example
+// ——————————————————————————————————————————————————
+
+const phrases = [
+  'EXPERIENCE THE POWER OF OUR TRADERS.',
+  'EXPERIENCE THE POWER OF OUR EXTENSIVE NETWORK.',
+  'EXPERIENCE THE POWER OF OUR ENTREPRENEURS.',
+  'EXPERIENCE THE POWER OF OUR HUSTLERS.',
+  'EXPERIENCE THE POWER OF OUR DEVELOPERS.',
+  'EXPERIENCE THE POWER OF OUR INDUSTRY LEADERS.',
+]
+
+const el = document.querySelector('.text')
+const fx = new TextScramble(el)
+
+let counter = 0
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    setTimeout(next, 800)
+  })
+  counter = (counter + 1) % phrases.length
+}
+
+next()
   </script>
 
   
@@ -127,40 +146,58 @@
       <h2 class="section-title">OUR SERVICES</h2>
       <div class="services-container reveal">
         <div class="service">
-          <h3>Crypto & NFT Calls</h3>
-          <p class="description">Gain access to our exclusive Discord community where experienced analysts provide real-time calls and insights for profitable cryptocurrency and NFT investments.</p>
-          <p class="price">$100/month</p>
-          <div class="service-buttons">
-            <a href="#contact" class="glow-on-hover2 btn btn-contact">Contact Email</a>
-            <span class="separator">or</span>
-            <a href="https://discord.gg/uDUaGVkhTE" class="glow-on-hover1 btn btn-discord">Open Ticket</a>
-          </div>
-          <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_CRYPTO_NFT_CALLS" class="glow-on-hover3 btn btn-buy">Buy Now</a>
-        </div>
-        <div class="service">
-          <h3>Private Network Access & Auto Trading</h3>
-          <p class="description">Elevate your trading game with our private network access and automated trading system that utilizes advanced algorithms to execute trades on your behalf.</p>
+          <h3>Private Network Access</h3>
           <p class="price">$500/month</p>
-          <div class="service-buttons">
-            <a href="#contact" class="glow-on-hover2 btn btn-contact">Contact Email</a>
-            <span class="separator">or</span>
-            <a href="https://discord.gg/uDUaGVkhTE" class="glow-on-hover1 btn btn-discord">Open Ticket</a>
+          <hr class="white-line">
+          <p class="description">Unlock the potential of your trading journey with our private network access, designed to elevate your strategies.</p>
+          <hr class="white-line">
+          <div class="service-features">
+            <span>&#10003; Solana NFTs</span>
+            <span>&#10003; Ethereum NFTs</span>
+            <span>&#10003; Crypto Calls</span>
+            <span>&#10003; Airdrop Farms</span>
           </div>
-          <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NETWORK_ACCESS" class="glow-on-hover3 btn btn-buy">Buy Now</a>
+          <hr class="white-line">
+          <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NFT_BOTTING" class="glow-on-hover btn btn-buy">PURCHASE</a>
+        </div>
+        <div class="service best-selling">
+          <div class="best-selling-icon">Best Seller</div>
+          <h3>Crypto & NFT Calls</h3>
+          <p class="price">$100/month</p>
+          <hr class="white-line">
+          <p class="description">Gain access to our exclusive Discord community where experienced analysts provide real-time calls and insights.</p>
+          <hr class="white-line">
+          <div class="service-features">
+            <span>&#10003; Solana NFTs</span>
+            <span>&#10003; Ethereum NFTs</span>
+            <span>&#10003; Crypto Calls</span>
+            <span>&#10007; Airdrop Farms</span>
+          </div>
+          <hr class="white-line">
+          <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NFT_BOTTING" class="glow-on-hover btn btn-buy">PURCHASE</a>
         </div>
         <div class="service">
-          <h3>NFT Botting Software & Support</h3>
-          <p class="description">Optimize your NFT investments with our cutting-edge botting software and expert support. Unlock hidden potentials in the NFT market and maximize your profits.</p>
+          <h3>NFT Botting Software</h3>
           <p class="price">$2,500</p>
-          <div class="service-buttons">
-            <a href="#contact" class="glow-on-hover2 btn btn-contact">Contact Email</a>
-            <span class="separator">or</span>
-            <a href="https://discord.gg/uDUaGVkhTE" class="glow-on-hover1 btn btn-discord">Open Ticket</a>
+          <hr class="white-line">
+          <p class="description">Enhance your NFT investments with our advanced botting software, designed to optimize your strategies in the NFT market. </p>
+          <hr class="white-line">
+          <div class="service-features">
+            <span>&#10007; Solana NFTs</span>
+            <span>&#10007; Ethereum NFTs</span>
+            <span>&#10007; Crypto Calls</span>
+            <span>&#10007; Airdrop Farms</span>
           </div>
-          <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NFT_BOTTING" class="glow-on-hover3 btn btn-buy">Buy Now</a>
+          <hr class="white-line">
+          <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NFT_BOTTING" class="glow-on-hover btn btn-buy">PURCHASE</a>
         </div>
+      </div>
     </div>
   </section>
+  
+
+
+
 
 
 
@@ -451,7 +488,7 @@
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" name="send" class="glow-on-hover btn" type="btn">Send Message</button>
+      <button type="submit" name="send" class="glow-on-hover btn" type="btn">SEND</button>
     </form>
     <div id="message"></div>
   </div>
