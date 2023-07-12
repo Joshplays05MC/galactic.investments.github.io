@@ -1,3 +1,4 @@
+
 const navSlide = () => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
@@ -20,35 +21,48 @@ const navSlide = () => {
     burger.classList.toggle('toggle');
   });
 
-  // Close Nav when a Nav Link is clicked
+  // Remove this block of code
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      // Check if navigation menu is active
-      if (nav.classList.contains('nav-active')) {
-        nav.classList.remove('nav-active');
-        burger.classList.remove('toggle');
-      }
+      nav.classList.remove('nav-active');
+      burger.classList.remove('toggle');
     });
   });
 
 
-  // Smooth Scroll
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
+  // Smooth Scroll to Sections
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
       const target = document.querySelector(link.querySelector('a').getAttribute('href'));
       const offsetTop = target.offsetTop;
 
       window.scrollTo({
         top: offsetTop,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
+
+      nav.classList.remove('nav-active'); // Close the menu when a nav link is clicked
     });
   });
 };
 
-
 navSlide();
+
+// we're checking to see if the arrow is up or down, then adding or removing the "lift" class accordingly
+var arrowBounce = function() {
+  var arrow = $(".arrow");
+  
+  if (arrow.hasClass("lift")) {
+    arrow.removeClass("lift");
+  } else {
+    arrow.addClass("lift");
+  }
+};
+
+// run the arrowBounce function every 800ms
+setInterval(arrowBounce, 800);
+
 
 
 window.addEventListener("scroll", function() {
