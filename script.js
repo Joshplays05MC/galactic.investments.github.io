@@ -49,6 +49,48 @@ const navSlide = () => {
 
 navSlide();
 
+
+
+function preloaderBlock() {
+  function a(a) {
+    a.preventDefault();
+  }
+  var b = document.querySelector(".preloader");
+  Hamster(b).wheel(a, false);
+}
+
+function reveal() {
+  var reveals = document.querySelectorAll('.reveal');
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowheight = window.innerHeight;
+    var revealtop = reveals[i].getBoundingClientRect().top;
+    var revealpoint = 150;
+
+    if (revealtop < windowheight - revealpoint) {
+      reveals[i].classList.add('active');
+    } else {
+      reveals[i].classList.remove('active');
+    }
+  }
+}
+
+window.addEventListener && window.addEventListener("DOMContentLoaded", function() {
+  document.body.className += " dom-loaded";
+  preloaderBlock();
+});
+
+window.addEventListener && window.addEventListener("load", function() {
+  setTimeout(function() {
+    document.body.className += " loaded";
+    reveal(); // Trigger the reveal function after the preloader
+  }, 1500);
+});
+
+
+
+
+
 // we're checking to see if the arrow is up or down, then adding or removing the "lift" class accordingly
 var arrowBounce = function() {
   var arrow = $(".arrow");
@@ -113,7 +155,7 @@ particlesJS("particles-js", {
       "value": 355,
       "density": {
         "enable": true,
-        "value_area": 789.1476416322727
+        "value_area": 1500.1476416322727
       }
     },
     "color": {
