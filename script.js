@@ -21,13 +21,7 @@ const navSlide = () => {
     burger.classList.toggle('toggle');
   });
 
-  // Remove this block of code
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('nav-active');
-      burger.classList.remove('toggle');
-    });
-  });
+
 
 
   // Smooth Scroll to Sections
@@ -88,22 +82,33 @@ window.addEventListener && window.addEventListener("load", function() {
 });
 
 
-
-
-
-// we're checking to see if the arrow is up or down, then adding or removing the "lift" class accordingly
-var arrowBounce = function() {
-  var arrow = $(".arrow");
-  
-  if (arrow.hasClass("lift")) {
-    arrow.removeClass("lift");
-  } else {
-    arrow.addClass("lift");
+gsap.fromTo(
+  ".loading-page",
+  { opacity: 1 },
+  {
+    opacity: 0,
+    duration: 1.0,
+    delay: 1.5,
+    onComplete: function() {
+      // Remove the loading page and allow scrolling after the animation is complete
+      document.querySelector(".loading-page").remove();
+      document.body.style.overflow = "auto";
+    }
   }
-};
+);
 
-// run the arrowBounce function every 800ms
-setInterval(arrowBounce, 800);
+gsap.to(".progress-line", {
+  width: "10%",
+  duration: 1.0,
+  delay: 0.5,
+  ease: "linear"
+});
+
+
+
+
+
+
 
 
 
