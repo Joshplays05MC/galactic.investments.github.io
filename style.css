@@ -232,11 +232,12 @@ nav {
 
   .buttonwrap {
     margin-right: 0; /* Remove the right margin on mobile view */
-    display: none; /* Hide the button
+    display: none; 
   }
 
-  nav {
+  .nav {
     justify-content: center; /* Center the logo on mobile view */
+    backdrop-filter: blur(7px); /* Blur effect always present */
   }
 
   .buttonwrap .createbtn {
