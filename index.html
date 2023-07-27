@@ -59,9 +59,7 @@
   <section id="home" class="hero reveal">
     <div class="bg-animation">
       <div class="content">
-        <h1>Welcome to Galactic Investments<br>
-          <span class="highlight">Enter the era of trading excellence</span>
-        </h1>
+        <h1>Welcome to Galactic Investments<br></h1>
         <p><span class="text"></span></p>
         <hr class="white-line1">
         <a href="#services" class="glow-on-hover btn" type="btn">Explore</a>
@@ -148,7 +146,7 @@ const fx = new TextScramble(el)
 let counter = 0
 const next = () => {
   fx.setText(phrases[counter]).then(() => {
-    setTimeout(next, 800)
+    setTimeout(next, 1100)
   })
   counter = (counter + 1) % phrases.length
 }
