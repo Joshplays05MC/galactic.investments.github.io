@@ -152,17 +152,6 @@ nav {
   position: relative;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #0a3243, #37367b);
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-}
 
 .nav-links a:hover {
   color: #0a3243;
@@ -176,7 +165,7 @@ nav {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50px;
   height: 50px;
-  padding: 5px 15px;
+  padding: 0px 15px;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Add transition for smooth effect */
 }
 
@@ -184,13 +173,20 @@ nav {
   color: #ffffff; /* Grey text color */
   background-color: transparent; /* Transparent background */
   border: none; /* Remove default button border */
-  padding: 10px 20px;
+  padding: 13px;
   font-size: 16px;
   border-radius: 5px;
   height: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth effect */
+  text-decoration: none; /* Remove underline from the button */
 }
+
+
+.buttonwrap:hover {
+  background: #0a3243;
+}
+
 
 .social-media-icons {
   margin-right: -200px; /* Add right margin to create space between logo and navigation links */
@@ -237,7 +233,6 @@ nav {
 
   .nav {
     justify-content: center; /* Center the logo on mobile view */
-    backdrop-filter: blur(7px); /* Blur effect always present */
   }
 
   .buttonwrap .createbtn {
@@ -285,9 +280,10 @@ nav {
   margin-bottom: 20px;
 }
 
+
 .hero p {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
 }
 
 .white-line1 {
@@ -407,8 +403,6 @@ border-radius: 10px;
 
 
 
-
-
 /* SERVICE CODE */
 
 .services {
@@ -512,11 +506,6 @@ border-radius: 10px;
 
 
 
-.btn-buy {
-  margin-top: auto;
-}
-
-
 .glow-on-hover3 {
   width: 220px;
   height: 50px;
@@ -580,21 +569,21 @@ border-radius: 10px;
   .services-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
 }
 
   .service {
     flex: none;
-    width: 100%;
+    width: 90%;
   }
   
   .best-selling-icon {
     position: relative; /* Remove absolute positioning */
     top: initial; /* Reset top positioning */
-    border-radius: 50px;
+    border-radius: 10px;
     left: initial; /* Reset left positioning */
     transform: none; /* Reset transform */
-    margin-top: -20px; /* Adjust the margin to reposition the badge */
+    margin-top: -10px; /* Adjust the margin to reposition the badge */
     margin-bottom: 10px; /* Add some spacing below the badge */
   }
 }
@@ -871,7 +860,7 @@ border-radius: 10px;
 }
 
 .about-us {
-  min-height: 80vh;
+  min-height: 105vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
