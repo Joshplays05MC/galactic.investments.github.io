@@ -160,7 +160,7 @@ particlesJS("particles-js", {
       "value": 355,
       "density": {
         "enable": true,
-        "value_area": 1500.1476416322727
+        "value_area": 3500.1476416322727
       }
     },
     "color": {
