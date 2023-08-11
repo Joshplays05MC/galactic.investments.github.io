@@ -26,7 +26,7 @@ display: block;
   top: 0;
   left: 0;
   z-index: 9999;
-  background: linear-gradient(to right, #0a3243, #0a3243, #0a3243);
+  background: linear-gradient(to top right, #0a3243, rgb(0, 0, 0), #0a3243);
 
   height: 100%;
   width: 100%;
@@ -49,26 +49,13 @@ display: block;
 }
 
 .progress-line {
-  width: 0;
-  height: 2px;
+  width: 1;
+  height: 1px;
   background-color: #ffffff;
 }
 
 
 
-.name-container {
-  height: 30px;
-  overflow: hidden;
-}
-
-.logo-name {
-  color: #fff;
-  font-size: 20px;
-  letter-spacing: 12px;
-  text-transform: uppercase;
-  margin-left: 20px;
-  font-weight: bolder;
-}
 
 /* ---- particles.js container ---- */
 
@@ -97,8 +84,8 @@ display: block;
 
 
 .logo img {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   transform: scale(2.1); /* Adjust the scale value as needed */
   margin-right: 400px; /* Add right margin to create space between logo and navigation links */
 }
@@ -1172,7 +1159,6 @@ margin-right: 10px;
 font-size: 1.2em;
 color: #999;
 }
-
 
 
 
