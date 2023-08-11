@@ -204,38 +204,47 @@ nav {
 
 
 
-@media screen and (max-width: 1652px) {
-  .nav-links {
-    display: none; /* Hide the navigation links on mobile view */
+
+
+
+
+/* Styles for collapsing navigation on smaller screens */
+@media screen and (max-width: 1653px) {
+  .nav-links,
+  .buttonwrap .createbtn {
+    display: none; /* Hide navigation links and create button on mobile view */
   }
 
   .social-media-icons {
     justify-content: center;
-    margin-right: -10px; /* Add right margin to create space between logo and navigation links */
+    margin-right: -30px; /* Add right margin to create space between logo and navigation links */
   }
 
   .logo img {
     margin-right: 0; /* Remove the right margin on mobile view */
-    margin-right: 190px; /* Add right margin to create space between logo and navigation links */
-  }
-
-  .buttonwrap {
-    margin-right: 0; /* Remove the right margin on mobile view */
-    display: none; 
+    margin-right: 50px; /* Add right margin to create space between logo and navigation links */
   }
 
   .nav {
-    justify-content: left; /* Center the logo on mobile view */
+    justify-content: center; /* Center the logo on mobile view */
   }
 
+  /* Additional styles for the contact button */
   .buttonwrap .createbtn {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent; /* Transparent background */
+    border-radius: 50px;
+    height: 50px;
+    padding: 5px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Add transition for smooth effect */
   }
 
-  .buttonwrap .createbtn {
-    display: none;
-  }
 }
+
+
+
 
 .nav-active {
   transform: translateX(0%);
@@ -926,7 +935,7 @@ border-radius: 10px;
 .about-text li {
   margin-bottom: 10px;
   font-weight: normal;
-  font-size: 1.1rem;
+  font-size: 1.08rem;
 }
 
 
@@ -990,10 +999,11 @@ border-radius: 10px;
     width: 100%;
     max-width: 90%;
     text-align: center;
+    align-items: center;
     display: grid;
     gap: 20px;
     background-color: rgba(0, 0, 0, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(52, 51, 51, 0.3);
     padding: 20px;
     border-radius: 10px;
   }
@@ -1004,7 +1014,7 @@ border-radius: 10px;
   }
 
   .about-text ul {
-    text-align: left;
+    text-align: center;
     margin-left: 0;
     padding-left: 20px;
   }
@@ -1013,7 +1023,6 @@ border-radius: 10px;
     margin-bottom: 10px;
     font-weight: normal;
     font-size: 1.1rem;
-    list-style-type: disc;
   }
 }
 
