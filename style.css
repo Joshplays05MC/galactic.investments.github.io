@@ -174,7 +174,7 @@ nav {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
-  height: 50px;
+  height: 42px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth effect */
 }
@@ -277,13 +277,15 @@ nav {
   position: relative;
 }
 
+
+
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3.9rem;
   margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 30px;
 }
 
@@ -292,7 +294,7 @@ nav {
   height: 2px;
   background-color: #fff;
   width: 20%; /* Adjust the width as needed */
-  margin: 30px auto; /* Adjust the margin as needed */
+  margin: 19px auto; /* Adjust the margin as needed */
 }
 
 .btn {
@@ -325,7 +327,7 @@ nav {
 
   .btn {
     font-size: 1.2rem; /* Adjust font size for button to be similar to desktop view */
-    padding: 10px 20px;
+    padding: 12px 10px;
   }
 }
 
@@ -577,24 +579,27 @@ border-radius: 10px;
   .services-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
 }
 
   .service {
     flex: none;
-    width: 100%;
-    height: 105%;
+    align-items: center;
+    width: 85%;
+    height: 70%;
   }
   
   .best-selling-icon {
     position: relative; /* Remove absolute positioning */
     top: initial; /* Reset top positioning */
-    border-radius: 50px;
+    width: 190px; /* Adjust the width to your desired value */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 20px;
     left: initial; /* Reset left positioning */
     transform: none; /* Reset transform */
-    margin-top: -20px; /* Adjust the margin to reposition the badge */
-    margin-bottom: 10px; /* Add some spacing below the badge */
+    margin: 10px auto 20px; 
   }
+  
 }
 
 
@@ -820,8 +825,8 @@ border-radius: 10px;
 
 @media screen and (max-width: 768px) {
   .wrapper{
-    width: 100%;
-    max-width: 90%;
+    width: auto;
+    max-width: 100%;
     margin: auto;
     margin-bottom: 30px;
   }
@@ -983,17 +988,7 @@ border-radius: 10px;
     text-align: center;
   }
 
-  .about-img {
-    width: 90%;
-    max-width: 400px;
-  }
-
-  .about-img img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-  }
+  
 
   .about-text {
     width: 100%;
@@ -1009,7 +1004,7 @@ border-radius: 10px;
   }
 
   .about-text p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 13px;
   }
 
@@ -1017,12 +1012,22 @@ border-radius: 10px;
     text-align: center;
     margin-left: 0;
     padding-left: 20px;
+    list-style-type: none; /* Remove bullet points */
+    font-weight: normal;
   }
 
   .about-text li {
     margin-bottom: 10px;
     font-weight: normal;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
+  }
+
+  .about-img {
+    display: none;
+  }
+  
+  .about-img img {
+    display: none;
   }
 }
 
@@ -1171,5 +1176,41 @@ color: #999;
 
 
 
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #000000;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #0a3243;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #0a3243;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #0a3243;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #0a3243;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #0a3243;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #0a3243;
+}
 
 
