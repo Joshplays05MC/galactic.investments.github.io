@@ -57,6 +57,8 @@ display: block;
 
 
 
+
+
 /* ---- particles.js container ---- */
 
 #particles-js {
@@ -227,9 +229,6 @@ nav {
 
   .nav {
     justify-content: center; /* Center the logo on mobile view */
-    background-color: linear-gradient(45deg, #0a3243, #fffcfc);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(7px); /* Add the blur effect */
   }
 
   /* Additional styles for the contact button */
@@ -511,11 +510,38 @@ border-radius: 10px;
   z-index: 2;
 }
 
-
-
-
 .btn-buy {
   margin-top: auto;
+}
+
+.coming-soon {
+  /* Position the service that should have the overlay */
+  position: relative;
+  z-index: 1; /* Ensure the service is above the overlay */
+}
+
+.coming-soon::before {
+  content: "Coming Soon";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 2; /* Ensure the overlay appears above the service details */
+  opacity: 1; /* Overlay is initially visible */
+}
+
+/* Remove the transition for the overlay opacity */
+.coming-soon:hover::before {
+  opacity: 1; /* Keep overlay visible on hover */
 }
 
 
