@@ -22,7 +22,7 @@
 
 <body>
   <div class="loading-page">
-    <img src="images/logo.png" alt="Logo">
+    <img class="preloader-logo" src="images/preloader.png" alt="Logo">
     <div class="progress-line"></div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
@@ -34,7 +34,7 @@
   <nav>
     <div class="logo">
       <a href="#home">
-        <img src="images/logo.png" alt="Logo">
+        <img class="navbar-logo" img src="images/logo.png" alt="Logo">
       </a>
     </div>
     <div class="burger"></div>
@@ -57,12 +57,14 @@
   
   
 
+  
+
 
 
   <section id="home" class="hero reveal">
     <div class="bg-animation">
       <div class="content">
-        <h1>Welcome to Galactic Investments<br></h1>
+        <h1>Welcome to Galactic Investments.<br></h1>
         <p><span class="text"></span></p>
         <a href="#services" class="glow-on-hover btn" type="btn">Explore</a>
       </div>
@@ -148,7 +150,7 @@ const fx = new TextScramble(el)
 let counter = 0
 const next = () => {
   fx.setText(phrases[counter]).then(() => {
-    setTimeout(next, 1100)
+    setTimeout(next, 1500)
   })
   counter = (counter + 1) % phrases.length
 }
@@ -192,7 +194,7 @@ next()
           <hr class="white-line1">
           <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NFT_BOTTING" class="glow-on-hover btn btn-buy">Subscribe</a>
         </div>
-        <div class="service">
+        <div class="service coming-soon">
           <h3>NFT Botting Software</h3>
           <p class="price">$2,500</p>
           <hr class="white-line1">
@@ -206,7 +208,7 @@ next()
           </div>
           <hr class="white-line1">
           <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NFT_BOTTING" class="glow-on-hover btn btn-buy">Buy now</a>
-        </div>
+        </div>        
       </div>
     </div>
   </section>
@@ -232,24 +234,24 @@ next()
         </div>
         <div class="about-text">
           <p>At Galactic Investments, we're passionate about your trading experience and unlocking your financial potential.</p>
-          <h3>Discover Lucrative Opportunities:</h3>
+          <h3>Discover Lucrative Opportunities</h3>
           <ul>
             <li>Our team of seasoned analysts possesses a keen eye for spotting hidden gems in the ever-evolving markets.</li>
             <li>We meticulously scan the financial landscape, unearthing untapped potential and uncovering profitable trade calls.</li>
           </ul>
           <br> <!-- Add a line break -->
-          <h3>Cutting-Edge Strategies:</h3>
+          <h3>Cutting-Edge Strategies</h3>
           <ul>
             <li>Equipped with cutting-edge tools and innovative techniques, our analysts craft intelligent trade scripts that drive results.</li>
           </ul>
           <br> <!-- Add a line break -->
-          <h3>Customer Satisfaction at the Core:</h3>
+          <h3>Customer Satisfaction at the Core</h3>
           <ul>
             <li>Your satisfaction is our top priority. We go the extra mile to cater to your unique needs and preferences, ensuring a tailored trading experience that exceeds your expectations.</li>
             <li>We pride ourselves on building lasting relationships with our clients, providing ongoing support and guidance on your trading journey.</li>
           </ul>
           <br> <!-- Add a line break -->
-          <h3>Maximize Your Trading Success:</h3>
+          <h3>Maximize Your Trading Success</h3>
           <ul>
             <li>With our comprehensive research and personalized approach, we empower you to achieve maximum trading success.</li>
             <li>Gain access to invaluable resources, expert advice, and tailored strategies designed to amplify your financial growth and unlock your trading potential.</li>
@@ -318,7 +320,7 @@ next()
             const nftsElement = document.getElementById("nfts");
     
             animateValue(snipesElement, 0, 40, 2000);
-            animateValue(profitElement, 0, 10000, 2000);
+            animateValue(profitElement, 0, 1000000, 2000);
             animateValue(nftsElement, 0, 25, 2000);
     
             observer.unobserve(section);
@@ -342,13 +344,13 @@ next()
     <div class="team-members reveal">
       <div class="team-member">
         <div class="team-member-content">
-          <img decoding="async" src="images/reallogo.PNG">
+          <img decoding="async" src="https://cdn.discordapp.com/attachments/1078428638615191583/1140430185133514782/IMG_4712.png">
           <h3>Parker</h3>
           <p>Founder & CEO</p>
         </div>
         <div class="team-member-overlay">
           <div class="team-member-overlay-content">
-            <img decoding="async" src="images/reallogo.PNG">
+            <img decoding="async" src="https://cdn.discordapp.com/attachments/1078428638615191583/1140430185133514782/IMG_4712.png">
             <h3>Parker</h3>
             <p>Founder & CEO</p>
             <hr class="white-line">
@@ -359,13 +361,13 @@ next()
       </div>
       <div class="team-member">
         <div class="team-member-content">
-          <img decoding="async" src="images/reallogo.PNG">
+          <img decoding="async" src="https://cdn.discordapp.com/attachments/1078428638615191583/1140430234022326413/IMG_4711.png">
           <h3>Thedeeny</h3>
           <p>Developer & Co-Founder</p>
         </div>
         <div class="team-member-overlay">
           <div class="team-member-overlay-content">
-            <img decoding="async" src="images/reallogo.PNG">
+            <img decoding="async" src="https://cdn.discordapp.com/attachments/1078428638615191583/1140430234022326413/IMG_4711.png">
             <h3>Thedeeny</h3>
             <p>Developer</p>
             <hr class="white-line">
