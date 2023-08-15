@@ -227,6 +227,9 @@ nav {
 
   .nav {
     justify-content: center; /* Center the logo on mobile view */
+    background-color: linear-gradient(45deg, #0a3243, #fffcfc);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(7px); /* Add the blur effect */
   }
 
   /* Additional styles for the contact button */
