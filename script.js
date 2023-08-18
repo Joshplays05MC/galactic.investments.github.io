@@ -1,28 +1,18 @@
-
 const navSlide = () => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
-  const navLinks = document.querySelectorAll('.nav-links li, .logo');
+  const navLinks = document.querySelectorAll('.nav-links li');
+  const lines = document.querySelectorAll('.line');
 
   burger.addEventListener('click', () => {
     // Toggle Nav
     nav.classList.toggle('nav-active');
 
-    // Animate Links
-    navLinks.forEach((link, index) => {
-      if (link.style.animation) {
-        link.style.animation = '';
-      } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-      }
+    // Toggle Burger Icon
+    lines.forEach((line, index) => {
+      line.classList.toggle('toggle-line');
     });
-
-    // Burger Animation
-    burger.classList.toggle('toggle');
   });
-
-
-
 
   // Smooth Scroll to Sections
   navLinks.forEach((link) => {
@@ -37,12 +27,14 @@ const navSlide = () => {
       });
 
       nav.classList.remove('nav-active'); // Close the menu when a nav link is clicked
+      lines.forEach((line, index) => {
+        line.classList.remove('toggle-line'); // Reset burger icon to original state
+      });
     });
   });
 };
 
 navSlide();
-
 
 
 function preloaderBlock() {
