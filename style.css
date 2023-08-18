@@ -234,10 +234,6 @@ nav {
     display: none; /* Hide navigation links and create button on mobile view */
   }
 
-  .buttonwrap {
-    display: none;
-  }
-
   .social-media-icons {
     justify-content: center;
     margin-right: -30px; /* Add right margin to create space between logo and navigation links */
@@ -250,30 +246,22 @@ nav {
 
   .nav {
     justify-content: center; /* Center the logo on mobile view */
+    background-color: linear-gradient(45deg, #0a3243, #fffcfc);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(7px); /* Add the blur effect */
   }
 
-
-  .nav-active .nav-links {
-    transform: translateY(0%);
-    opacity: 1;
+  /* Additional styles for the contact button */
+  .buttonwrap .createbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent; /* Transparent background */
+    border-radius: 50px;
+    height: 50px;
+    padding: 5px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Add transition for smooth effect */
   }
-
-  .line.toggle-line {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .line.toggle-line:nth-child(2) {
-    opacity: 0;
-  }
-
-  .line.toggle-line:last-child {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-  
-  .burger {
-    display: flex; /* Show the burger menu icon on mobile view */
-  }
-
 }
 
 
