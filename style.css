@@ -228,7 +228,6 @@ nav {
 
 
 /* Styles for collapsing navigation on smaller screens */
-/* Styles for collapsing navigation on smaller screens */
 @media screen and (max-width: 1653px) {
   .nav-links,
   .buttonwrap .createbtn {
@@ -247,6 +246,7 @@ nav {
 
   .nav {
     justify-content: center; /* Center the logo on mobile view */
+    background-color: rgba(10, 50, 67, 0.7); /* Add a semi-transparent background color */
   }
 
   /* Additional styles for the contact button */
@@ -260,21 +260,7 @@ nav {
     padding: 5px 15px;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Add transition for smooth effect */
   }
-
-  /* Add a semi-transparent overlay div for a similar effect */
-  .nav::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(10, 50, 67, 0.7); /* Adjust the color and opacity as needed */
-    backdrop-filter: blur(7px); /* Add a blur effect to the overlay */
-    z-index: -1; /* Place it behind other content */
-  }
 }
-
 
 
 
