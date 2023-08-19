@@ -228,6 +228,7 @@ nav {
 
 
 /* Styles for collapsing navigation on smaller screens */
+/* Styles for collapsing navigation on smaller screens */
 @media screen and (max-width: 1653px) {
   .nav-links,
   .buttonwrap .createbtn {
@@ -246,9 +247,6 @@ nav {
 
   .nav {
     justify-content: center; /* Center the logo on mobile view */
-    background-color: linear-gradient(45deg, #0a3243, #fffcfc);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(7px); /* Add the blur effect */
   }
 
   /* Additional styles for the contact button */
@@ -262,7 +260,13 @@ nav {
     padding: 5px 15px;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Add transition for smooth effect */
   }
+
+  /* Apply the blur effect on mobile view */
+  .nav {
+    backdrop-filter: blur(7px);
+  }
 }
+
 
 
 
