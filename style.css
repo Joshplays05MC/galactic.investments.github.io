@@ -13,9 +13,13 @@ font-weight: bold;
 margin: 0;
 background-color: #000000;
 overflow: hidden;
+overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-
+::selection{
+  background-color: #051a22;
+  color: #ffffff;
+}
 
 canvas {
 display: block;
@@ -26,7 +30,7 @@ display: block;
   top: 0;
   left: 0;
   z-index: 9999;
-  background: linear-gradient(to top right, #0a3243, rgb(0, 0, 0), #0a3243);
+  background:black;
 
   height: 100%;
   width: 100%;
@@ -78,14 +82,14 @@ display: block;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top right, #0a3243, rgba(6, 1, 30, 0.2), #0a3243);
+  background: linear-gradient(to top right, #000000, #121b2e28, #0a3243);
 }
 
 
 
 
 
-.logo img {
+.logo img{
   width: 40px;
   height: 40px;
   transform: scale(2.1); /* Adjust the scale value as needed */
@@ -246,7 +250,6 @@ nav {
 
   .nav {
     justify-content: center; /* Center the logo on mobile view */
-    background-color: rgba(10, 50, 67, 0.7); /* Add a semi-transparent background color */
   }
 
   /* Additional styles for the contact button */
@@ -284,36 +287,106 @@ nav {
 
 
 
-.hero {
-  position: relative;
-  min-height: 100vh;
+
+ /* MAIN */
+
+.home {
+  max-width: 1050px;
+  width: 100%;
+  min-height: 85vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  margin: 25px auto 10px auto;
   color: #fff;
-}
-
-.content {
+  padding-bottom: 10px;
   position: relative;
 }
 
-
-
-.hero h1 {
-  font-size: 3.9rem;
-  margin-bottom: 20px;
+.main-img{
+  max-width: 350px;
+  max-height: 600px;
+  width: 100%;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+.main-bg{
+  display: none;
+}
+.main-img img{
+  width: 160%;
+  height: 160%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.main-text{
+  max-width: 400px;
+  position: relative;
+}
+
+.main-text::before{ 
+  content: 'Galactic Investments.'; 
+  position: absolute; 
+  left: 55%;
+  transform: translateX(-50%);
+  top: -3px;
+  font-size: 4.5rem;
+  color: #558bff28; 
+  line-height: 7rem; 
+  font-weight: 700;
+  z-index: -1;
+}
+
+.main-text strong{
+  color:#ffffff;
+  font-weight: 700; 
+  letter-spacing: 1px;
+  font-size: 1.95rem;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main-text h1{
+  color: #ffffff;
+  font-size: 5rem;
+  line-height: 4rem;
+  letter-spacing: 1px;
+}
+
+.main-text h1 span{
+  color: #0a3243;
+}
+
+.main-text p {
+  color: #999;
+  margin: 30px 0px;
+  letter-spacing: 3px;
+  font-size: 1rem;
+}
+
+.main-text a{
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 6px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #558bff28;
+  text-align: center;
+  padding: 10px 10px 10px 0px;
+  transition: all 508ms cubic-bezier(0.77,0,0.175,1);
+  text-decoration: none;
+}
+
+.main-text a:hover{
+  padding: 10px;
+  background-color: rgba(104,154,248,0.1);
 }
 
 .white-line1 {
   border: none;
   height: 2px;
-  background-color: #fff;
+  background-color:rgba(255, 255, 255, 0.3);
   width: 20%; /* Adjust the width as needed */
   margin: 19px auto; /* Adjust the margin as needed */
 }
@@ -329,49 +402,93 @@ nav {
   transition: background-color 0.3s ease;
 }
 
+
+
+
+
 /* ... Your existing CSS code ... */
 
-@media screen and (max-width: 968px) {
-  .hero h1 {
-    font-size: 2.1rem; /* Adjust font size for h1 to be similar to desktop view */
-    margin-bottom: 15px;
+@media(max-width: 850px) {
+  #main{
+    padding: 40px 0px 70px 0px;
+    min-height: 85vh;
+  }
+  .main-img{
+    display: none;
+  }
+  .main-text{
+    max-width: 100%;
+    width: 100%;
   }
 
-  .hero p {
-    font-size: 0.8rem; /* Adjust font size for p to be similar to desktop view */
-    margin-bottom: 20px;
+  .main-text p {
+    margin: 10px 0px;
   }
 
-  .white-line1 {
-    width: 30%; /* Adjust the width for the line to be similar to desktop view */
+  .main-text::before{
+    display: none;
   }
 
-  .btn {
-    font-size: 1.2rem; /* Adjust font size for button to be similar to desktop view */
-    padding: 12px 10px;
+  .main-text h1{
+    font-size: 4rem;
   }
+  .main-bg{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate (-50%, -50%);
+    height: 500px;
+    display: block;
+  }
+
+  .main-bg img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
 }
 
-/* Add styles for iPads */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .hero h1 {
-    font-size: 3rem; /* Adjust font size for h1 on iPads */
-    margin-bottom: 20px;
+
+@media(max-width: 500px) {
+  #main{
+    min-height: 500hz;
+    margin-top: 0px;
+    min-height: 15vh;
   }
 
-  .hero p {
-    font-size: 1.5rem; /* Adjust font size for p on iPads */
-    margin-bottom: 30px;
+  .main-bg{
+    top: 25%;
+    transform: translate(-50%, -15%);
   }
 
-  .white-line1 {
-    width: 20%; /* Adjust the width for the line on iPads */
+  .main-text::before{
+    display: none;
   }
 
-  .btn {
-    font-size: 1.2rem; /* Adjust font size for button on iPads */
-    padding: 10px 20px;
+  .main-text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
   }
+
+  .main-text strong {
+    font-size: 1.3rem;
+  }
+
+  .main-text h1{
+    font-size: 2.3rem;
+    line-height: 2.3rem;
+  }
+
+  .main-text p {
+    font-size: 0.75rem;
+  }
+
 }
 
 
@@ -445,10 +562,11 @@ border-radius: 10px;
   font-size: 2.5rem;
   color: #ffffff;
   margin-bottom: 60px;
+  letter-spacing: 3px;
 }
 
 .services-container {
-  min-height: 80vh;
+  min-height: 30vh;
   display: flex;
   justify-content: center;
   gap: 60px;
@@ -459,26 +577,26 @@ border-radius: 10px;
   padding: 40px;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.6s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   width: 400px; /* Adjust the width as needed */
-  height: 650px; /* Adjust the height as needed */
+  height: 590px; /* Adjust the height as needed */
 }
 
 .service.best-selling {
   background-color: transparent;
-  border: 2px solid #0a3243;
+  border: 2px solid #558bff28;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 
 .service:hover {
-  transform: translateY(-10px);
+  transform: translateY(-20px);
 }
 
 .service h3 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   color: #ffffff;
   margin-bottom: 10px;
   font-weight: bold;
@@ -490,18 +608,35 @@ border-radius: 10px;
   margin-bottom: 10px;
 
   /* Gradient color effect */
-  background: linear-gradient(90.01deg,#0a3243 .01%,#ffffff 50.01%,#0a3243 100%),linear-gradient(180deg,rgba(0, 0, 0, 0.4) 0%,rgba(0, 0, 0, 0.28) 100%);
+  background: linear-gradient(90.01deg,#0a3243 .01%,#ffffff 10.01%,#0a3243 100%),linear-gradient(180deg,rgba(0, 0, 0, 0.4) 0%,rgba(0, 0, 0, 0.28) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .service p.description {
-  color: #ffffff;
+  color: #999;
   margin-bottom: 20px;
 }
 
+.service a{
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #558bff28;
+  text-align: center;
+  padding: 10px 10px 10px 0px;
+  transition: all 508ms cubic-bezier(0.77,0,0.175,1);
+  text-decoration: none;
+}
 
+.service a:hover{
+  padding: 10px;
+  background-color: rgba(104,154,248,0.1);
+}
 
 
 .service-features {
@@ -511,12 +646,15 @@ border-radius: 10px;
 .service-features span {
   display: block;
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #999;
   margin-bottom: 10px;
+  position: relative; /* Add relative positioning */
+  padding-left: 0px; /* Add left padding for the symbol */
 }
 
+
 .best-selling-icon {
-  background-color: #0a3243;
+  background-color: #558bff28;
   color: #ffffff;
   padding: 8px 12px;
   border-radius: 50px;
@@ -546,7 +684,7 @@ border-radius: 10px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(6, 16, 24, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -564,66 +702,10 @@ border-radius: 10px;
 }
 
 
-.glow-on-hover3 {
-  width: 220px;
-  height: 50px;
-  border: none;
-  outline: none;
-  color: #fff;
-  background: linear-gradient(45deg, #0a3243, #000000);
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-  animation: pulse 2s infinite;
-}
-
-
-.glow-on-hover3:before {
-  content: '';
-  background: linear-gradient(45deg,  #0a3243, #000);
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-.glow-on-hover3:hover:before {
-  opacity: 1;
-}
-
-.glow-on-hover3:after {
-  z-index: -1;
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #000, #0a3243, #000);
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-
-@keyframes glowing {
-  0%{
-    background-position: 0%;
-  }
-  100%{
-    background-position: 400%;
-  }
-}
 
 
 /* Media Query for Mobile Devices */
-@media only screen and (max-width: 1094px) {
+@media only screen and (max-width: 1157px) {
   .services-container {
     display: flex;
     flex-direction: column;
@@ -636,16 +718,43 @@ border-radius: 10px;
     width: 85%;
     height: 70%;
   }
+
+  .section-title {
+    font-size: 2.0rem;
+  }
+
+  .service h3 {
+    font-size: 1.7rem;
+  }
+
+  .service p.description {
+    font-size: 0.8rem;
+  }
+
+  .service-features span {
+    font-size: 0.8rem;
+  }
   
   .best-selling-icon {
-    position: relative; /* Remove absolute positioning */
-    top: initial; /* Reset top positioning */
-    width: 190px; /* Adjust the width to your desired value */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 20px;
-    left: initial; /* Reset left positioning */
-    transform: none; /* Reset transform */
-    margin: 10px auto 20px; 
+    background-color: #558bff28;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0; /* Initially hide the icon */
+    pointer-events: none; /* Ensure the icon doesn't interfere with hover */
+    transition: opacity 0.3s ease; /* Add a smooth transition */
+  }
+
+  /* Show the icon when hovering over a service */
+  .service:hover .best-selling-icon {
+    opacity: 1;
   }
   
 }
@@ -681,6 +790,7 @@ border-radius: 10px;
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 30px;
+  letter-spacing: 3px;
 }
 
 .team-members {
@@ -699,13 +809,13 @@ border-radius: 10px;
   background-color: transparent;
   border-radius: 10px;
   overflow: hidden;
-  transition: 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: 0.9s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 
 .team-member:hover {
-  transform: scale(1.05);
+  transform: scale(1.12);
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
@@ -799,7 +909,6 @@ border-radius: 10px;
 
 /* FAQ CODE */
 
-
 .wrapper {
   min-height: 80vh;
   max-width: 40%;
@@ -813,12 +922,12 @@ border-radius: 10px;
   position: relative;
 }
 
-
 .wrapper h2 {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center; /* Added */
+  letter-spacing: 3px;
 }
 
 .accordion {
@@ -827,8 +936,10 @@ border-radius: 10px;
   cursor: pointer;
   font-size: 1.2rem;
   width: 100%;
-  padding: 2rem 3rem; /* Adjusted width */
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  /* Adjusted padding and margin */
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
   outline: none;
   transition: 0.4s;
   display: flex;
@@ -848,11 +959,12 @@ border-radius: 10px;
 }
 
 .accordion:hover {
-  background-color: #0a3243;
+  background-color: #051a22;
 }
 
 .pannel {
-  padding: 0 3rem 2.5rem 2rem; /* Adjusted width */
+  /* Adjusted padding */
+  padding: 0 1.5rem 1rem 1rem;
   background-color: rgba(39, 39, 39, 0.2);
   overflow: hidden;
   display: none;
@@ -862,7 +974,7 @@ border-radius: 10px;
 
 .pannel p {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   line-height: 1.4;
 }
 
@@ -871,26 +983,34 @@ border-radius: 10px;
   margin: 10px 0;
 }
 
+/* Your existing CSS styles for .accordion and .pannel go here */
+
+
+
+
 @media screen and (max-width: 768px) {
-  .wrapper{
+  .wrapper {
     width: auto;
-    max-width: 100%;
-    margin: auto;
+    max-width: 95%;
     margin-bottom: 30px;
   }
-  
+
   .accordion {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    width: 100%; /* Adjusted width for mobile */
+    padding: 1rem; /* Adjusted padding for mobile */
+    margin-bottom: 10px;
   }
-  
+
   .accordion i {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 0;
+    text-align: left;
+    font-size: 1.2rem; /* Adjusted font size for mobile */
   }
 }
-
 
 
 
@@ -901,25 +1021,7 @@ border-radius: 10px;
 
 /* ABOUT US CODE */
 
-.call {
-  text-align: center;
-  transition: transform 0.3s ease;
-}
 
-.call img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.call:nth-child(2) img {
-  margin-bottom: 5px; /* Adjust the margin to position the middle image slightly lower */
-}
-
-.call p {
-  font-size: 1.2rem;
-}
 
 .about-us {
   min-height: 80vh;
@@ -944,6 +1046,8 @@ border-radius: 10px;
   font-size: 2.5rem;
   margin-bottom: 1px;
   color: #fff;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
 }
 
 .about-img {
@@ -980,14 +1084,14 @@ border-radius: 10px;
 }
 
 .about-text ul {
-  list-style-type: disc;
-  margin-left: 20px;
-  padding-left: 10px;
+  color: #999;
+  list-style-type: none; /* Add this line */
 }
+
 
 .about-text li {
   margin-bottom: 10px;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 1.08rem;
 }
 
@@ -1024,6 +1128,10 @@ border-radius: 10px;
   margin-bottom: 5px;
 }
 
+.about-us .statistics-stat p {
+  color: #999;
+}
+
 .about-us .statistics-stat:last-child::before {
   display: none;
 }
@@ -1032,15 +1140,22 @@ border-radius: 10px;
   .about-container {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     text-align: center;
   }
 
   
+  .about-us h2 {
+    font-size: 2.0rem;
+  }
+
+  .about-us h3 {
+    font-size: 1.0rem;
+  }
 
   .about-text {
     width: 100%;
-    max-width: 90%;
+    max-width: 95%;
     text-align: center;
     align-items: center;
     display: grid;
@@ -1049,10 +1164,11 @@ border-radius: 10px;
     border: 2px solid rgba(52, 51, 51, 0.3);
     padding: 20px;
     border-radius: 10px;
+    font-size: 1.7rem;
   }
 
   .about-text p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 13px;
   }
 
@@ -1060,14 +1176,14 @@ border-radius: 10px;
     text-align: center;
     margin-left: 0;
     padding-left: 20px;
-    list-style-type: none; /* Remove bullet points */
     font-weight: normal;
+    font-size: 1.1rem;
   }
 
   .about-text li {
     margin-bottom: 10px;
     font-weight: normal;
-    font-size: 1.0rem;
+    font-size: 0.8rem;
   }
 
   .about-img {
@@ -1103,6 +1219,7 @@ border-radius: 10px;
 .contact h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  letter-spacing: 3px;
 }
 
 .contact input,
@@ -1166,17 +1283,6 @@ footer a {
 }
 
 
-.toggle .line1 {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.toggle .line2 {
-  opacity: 0;
-}
-
-.toggle .line3 {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
 
   /* Scroll Animation */
   @keyframes scrollAnimation {
@@ -1189,6 +1295,7 @@ footer a {
       transform: translateY(0);
   }
   }
+
 
 /* Apply animation to visible sections */
 section {
@@ -1221,6 +1328,13 @@ margin-right: 10px;
 font-size: 1.2em;
 color: #999;
 }
+
+
+
+
+
+
+
 
 
 
@@ -1260,5 +1374,4 @@ color: #999;
 *::-webkit-scrollbar-thumb:active {
   background-color: #0a3243;
 }
-
 
