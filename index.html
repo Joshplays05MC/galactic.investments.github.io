@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Galactic Investments</title>
   <link rel="icon" href="images/logo.png" sizes="392x392">
-  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="lightbox.css">
+  <link rel="stylesheet" href="css/lightbox.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/aos.css"/>
 
 </head>
 
@@ -50,18 +50,13 @@
     </div> 
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing-table">Services</a></li>
       <li><a href="#about-us">About</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="#faq">Faq</a></li>
     </ul>
     <div class="buttonwrap">
       <a href="#contact" class="createbtn selectedbtn" type="btn">Contact</a>
-    </div>
-    <div class="social-media-icons">
-      <a href="https://twitter.com/GalacticWeb3"><img src="images/wtwit.png" alt="Twitter"></a>
-      <a href="https://discord.gg/VYtZdeRe5U"><img src="images/wdisc.png" alt="Discord"></a>
-      <a href="mailto:brynley.bp@gmail.com"><img src="images/wgmail.png" alt="Gmail"></a>
     </div>
   </nav>
   
@@ -79,7 +74,7 @@
         <strong>Welcome to,</strong>
         <h1>Galactic Investments<span>.</span></h1>
         <p><span class="text">experience the power of</span></p>
-        <a href="#services">Explore</a>
+        <a href="#pricing-table">Explore</a>
       </div>
     <div class="main-img">
       <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F2016%2F06%2FEarth-PNG-File.png&f=1&nofb=1&ipt=6d303096e6177bcccb07ba8d3b52c52e6d97fe22891d3189b88c37b761363dfb&ipo=images" alt="">
@@ -174,59 +169,441 @@ next()
   </script>
 
   
-  <section id="services" class="services">
-    <div class="container">
-      <h2 class="section-title">OUR SERVICES</h2>
-      <div class="services-container reveal">
-        <div class="service">
-          <h3>Private Network Access</h3>
-          <p class="price">$500/month</p>
-          <hr class="white-line1">
-          <p class="description">Unlock the potential of your trading journey with our private network access, designed to elevate your strategies.</p>
-          <hr class="white-line1">
-          <div class="service-features">
-            <span>&#10003; Solana NFTs</span>
-            <span>&#10003; Ethereum NFTs</span>
-            <span>&#10003; Crypto Calls</span>
-            <span>&#10003; Airdrop Farms</span>
-          </div>
-          <hr class="white-line1">
-          <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NFT_BOTTING">Subscribe</a>
+  <section id="pricing-table">
+    <h2 class="section-title">OUR SERVICES</h2>
+    <!--price-box-container---------------->
+    <div class="price-box-container" data-aos="fade-left" data-aos-duration="1100">
+        <!--box-1------->
+        <div class="price-box">
+            <!--top-section-------->
+            <div class="box-top-section">
+                <!--plan-name--->
+                <div class="plan-name">
+                    <strong>Starter</strong>
+                    <span>Crypto & NFT Calls</span>
+                </div>
+    
+                <!--price-section------>
+                <div class="price-section">
+                    <!---price-annually----->
+                    <strong class="price">
+                        <span>$</span>
+                           <strong>100</strong>
+                        <span>/mo</span>
+                    </strong>
+                </div>
+                <!---per-month--------------->
+            </div>
+            <!--features-section--->
+            <div class="box-features-section">
+                <!--features-box-1--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Solana NFTs</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Solana NFTs.</p>
+                    </div>
+                </div>
+                <!--features-box-2--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Ethereum NFTs</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Customization is limited to changing the theme and colors of the chat widget.</p>
+                    </div>
+                </div>
+                <!--features-box-3--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Crypto Calls</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Built-in ticketing system that will allow you to create, manage, and track tougher cases. You can also use it to handle emails and messages left when your LiveChat is offline.</p>
+                    </div>
+                </div>
+                <!--features-box-4--->
+                <!--chose-plan-btn------------------->
+                <a href="#" class="chose-plan-btn">Choose Plan 
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
         </div>
-        <div class="service best-selling">
-          <div class="best-selling-icon">Best Seller</div>
-          <h3>Crypto & NFT Calls</h3>
-          <p class="price">$100/month</p>
-          <hr class="white-line1">
-          <p class="description">Gain access to our exclusive Discord community where experienced analysts provide real-time calls and insights.</p>
-          <hr class="white-line1">
-          <div class="service-features">
-            <span>&#10003; Solana NFTs</span>
-            <span>&#10003; Ethereum NFTs</span>
-            <span>&#10003; Crypto Calls</span>
-            <span>&#10007; Airdrop Farms</span>
-          </div>
-          <hr class="white-line1">
-          <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NFT_BOTTING">Subscribe</a>
+        <!--box-2----------------------------------------->
+        <div class="price-box">
+            <!--top-section-------->
+            <div class="box-top-section">
+                <!--plan-name--->
+                <div class="plan-name">
+                    <strong>Advanced</strong>
+                    <span>Private Network Access</span>
+                </div>
+
+                <!--price-section------>
+                <div class="price-section">
+                    <!---price-annually----->
+                    <strong class="price">
+                        <span>$</span>
+                           <strong>500</strong>
+                        <span>/mo</span>
+                    </strong>
+                </div>
+                <!---per-month--------------->
+            </div>
+            <!--features-section--->
+            <div class="box-features-section">
+                <!--features-box-1--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Solana NFTs</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Full customization, including changing the theme, colors, visibility.</p>
+                    </div>
+                </div>
+                <!--features-box-2--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Ethereum NFTs</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Built-in ticketing system that will allow you to create, manage, and track tougher cases. You can also use it to handle emails and messages left when your LiveChat is offline.</p>
+                    </div>
+                </div>
+                <!--features-box-3--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Crypto Calls</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Secure 256-bit SSL encryption for website visitors and agents connecting to your LiveChat.</p>
+                    </div>
+                </div>
+                <!--features-box-4--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Airdrop Farms</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Chat and ticket reports plus a daily recap of your account activity.</p>
+                    </div>
+                </div>
+                <!--features-box-5--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>24/7 Customer Support</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>You can divide your LiveChat by department. This way, you can route chats to the right agents.</p>
+                    </div>
+                </div>
+                <!--features-box-6--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Early Access to Features</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>You can put LiveChat on multiple websites. Each implementation can be customized separately.</p>
+                    </div>
+                </div>
+                <!--chose-plan-btn------------------->
+                <a href="#" class="chose-plan-btn">Choose Plan <i class="fas fa-chevron-right"></i></a>
+            </div>
         </div>
-        <div class="service coming-soon">
-          <h3>NFT Botting Software</h3>
-          <p class="price">$2,500</p>
-          <hr class="white-line1">
-          <p class="description">Enhance your NFT investments with our advanced botting software, designed to optimize your strategies in the NFT market. </p>
-          <hr class="white-line1">
-          <div class="service-features">
-            <span>&#10007; Solana NFTs</span>
-            <span>&#10007; Ethereum NFTs</span>
-            <span>&#10007; Crypto Calls</span>
-            <span>&#10007; Airdrop Farms</span>
-          </div>
-          <hr class="white-line1">
-          <a href="YOUR_STRIPE_PAYMENT_FORM_URL_FOR_NFT_BOTTING">Buy now</a>
-        </div>        
-      </div>
+        <!--box-3------->
+        <div class="price-box popular">
+            <!--top-section-------->
+            <div class="box-top-section">
+                <!--top-bar-->
+                <div class="top-bar">
+                    <span>Popular</span>
+                </div>
+                <!--plan-name--->
+                <div class="plan-name">
+                    <strong>Business</strong>
+                    <span>NFT Botting Software</span>
+                </div>
+    
+                <!--price-section------>
+                <div class="price-section">
+                    <!---price-annually----->
+                    <strong class="price">
+                        <span>$</span>
+                           <strong>2500</strong>
+                    </strong>
+                </div>
+                <!---per-month--------------->
+                <span class="per-month">or <strong>$300</strong> month-to-month</span>
+            </div>
+            <!--features-section--->
+            <div class="box-features-section">
+                <!--features-box-1--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Ethereum NFTs</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Full customization, including changing the theme, colors, visibility.</p>
+                    </div>
+                </div>
+                <!--features-box-2--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Crypto Calls</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Built-in ticketing system that will allow you to create, manage, and track tougher cases. You can also use it to handle emails and messages left when your LiveChat is offline.</p>
+                    </div>
+                </div>
+                <!--features-box-3--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Solana NFTs</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Secure 256-bit SSL encryption for website visitors and agents connecting to your LiveChat.</p>
+                    </div>
+                </div>
+                <!--features-box-4--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Airdrop Farms</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Chat and ticket reports plus a daily recap of your account activity.</p>
+                    </div>
+                </div>
+                <!--features-box-5--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>24/7 Customer Support</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>You can divide your LiveChat by department. This way, you can route chats to the right agents.</p>
+                    </div>
+                </div>
+                <!--features-box-6--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Early Access to Features</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>You can put LiveChat on multiple websites. Each implementation can be customized separately.</p>
+                    </div>
+                </div>
+                <!--features-box-7--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Crypto Calls Integration</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>All your chats will be stored in the archives.</p>
+                    </div>
+                </div>
+                
+                <!--features-box-8--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Customization Options</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>A report that will tell you how many agents you will need to cover your changing chat volume.</p>
+                    </div>
+                </div>
+                <!--features-box-9--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Market Insights</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Configure the working hours for your agents to ensure smooth transitions between shifts.</p>
+                    </div>
+                </div>
+                <!--chose-plan-btn------------------->
+                <a href="#" class="chose-plan-btn">Choose Plan <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <!--box-4------->
+        <div class="price-box">
+            <!--top-section-------->
+            <div class="box-top-section">
+                <!--plan-name--->
+                <div class="plan-name">
+                    <strong>Enterprise</strong>
+                    <span>Another service parker chooses...</span>
+                </div>
+    
+                <!--price-section------>
+                <div class="price-section">
+                    <!---price-annually----->
+                    <strong class="price">
+                        <span>$</span>
+                           <strong>9000</strong>
+                        <span>/mo</span>
+                    </strong>
+                </div>
+                <!---per-month--------------->
+                <span class="per-month">or <strong>$19</strong> month-to-month</span>
+            </div>
+            <!--features-section--->
+            <div class="box-features-section">
+                <!--features-box-1--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Solana NFTs</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Full customization, including changing the theme, colors.</p>
+                    </div>
+                </div>
+                <!--features-box-2--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Ethereum NFTs</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Built-in ticketing system that will allow you to create, manage, and track tougher cases. You can also use it to handle emails and messages left when your LiveChat is offline.</p>
+                    </div>
+                </div>
+                <!--features-box-3--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Crypto Calls</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Secure 256-bit SSL encryption for website visitors and agents connecting to your LiveChat.</p>
+                    </div>
+                </div>
+                <!--features-box-4--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Airdrop Farms</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Chat and ticket reports plus a daily recap of your account activity.</p>
+                    </div>
+                </div>
+                <!--features-box-5--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>24/7 Customer Support</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>You can divide your LiveChat by department. This way, you can route chats to the right agents.</p>
+                    </div>
+                </div>
+                <!--features-box-6--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Early Access to Features</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>You can put LiveChat on multiple websites. Each implementation can be customized separately.</p>
+                    </div>
+                </div>
+                <!--features-box-7--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Crypto Calls Integration</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>All your chats will be stored in the archives.</p>
+                    </div>
+                </div>
+                
+                <!--features-box-8--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Customization Options</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>A report that will tell you how many agents you will need to cover your changing chat volume.</p>
+                    </div>
+                </div>
+                <!--features-box-9--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Market Insights</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Configure the working hours for your agents to ensure smooth transitions between shifts.</p>
+                    </div>
+                </div>
+                <!--features-box-10--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Training Resources</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Your chats will be lo stored in the archives for 60 days.</p>
+                    </div>
+                </div>
+                <!--features-box-12--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Custom Bot Development</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Your chats will be lo stored in the archives for 60 days.</p>
+                    </div>
+                </div>
+                
+                <!--features-box-13--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Exclusive Partnerships</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Your chats will be lo stored in the archives for 60 days.</p>
+                    </div>
+                </div>
+                <!--features-box-14--->
+                <div class="features-box">
+                    <!--icon---->
+                    <i class="fas fa-check"></i>
+                    <span>Premium Support</span>
+                    <!--box-show-when-hover---->
+                    <div class="feature-details">
+                        <p>Your chats will be lo stored in the archives for 60 days.</p>
+                    </div>
+                </div>
+                <!--chose-plan-btn------------------->
+                <a href="#" class="chose-plan-btn">Choose Plan <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
   
 
 
@@ -237,9 +614,9 @@ next()
   
   <section id="about-us" class="about-us">
     <h2>ABOUT US</h2>
-    <div class="container reveal">
+    <div class="container">
       <div class="about-container">
-        <div class="about-img">
+        <div class="about-img" data-aos="fade-left" data-aos-duration="1100">
             <a href="https://cdn.discordapp.com/attachments/1070034887526064279/1121293567747444847/Screenshot_2023-06-22_at_9.13.57_AM.png" data-lightbox="models" data-title="Caption1" onmouseover="blurOtherImage(0)" onmouseout="clearOtherImage(0)">
               <img id="image1" src="https://cdn.discordapp.com/attachments/1070034887526064279/1121293567747444847/Screenshot_2023-06-22_at_9.13.57_AM.png" alt="Image 1">
             </a>
@@ -247,7 +624,7 @@ next()
               <img id="image2" src="https://cdn.discordapp.com/attachments/1070034887526064279/1121420975746068500/Screenshot_2023-06-22_at_5.46.03_PM.png" alt="Image 2">
             </a>
           </div> 
-        <div class="about-text">
+        <div class="about-text" data-aos="fade-left" data-aos-duration="800">
           <p>At Galactic Investments, we're passionate about your trading experience and unlocking your financial potential.</p>
           <h3>Discover Lucrative Opportunities</h3>
           <ul>
@@ -375,8 +752,8 @@ next()
 <section id="team" class="team">
   <div class="container">
     <h2 class="elementor-heading-title elementor-size-default">OUR TEAM</h2>
-    <div class="team-members reveal">
-      <div class="team-member">
+    <div class="team-members">
+      <div class="team-member" data-aos="fade-right" data-aos-duration="1100">
         <div class="team-member-content">
           <img decoding="async" src="https://cdn.discordapp.com/attachments/1078428638615191583/1140430185133514782/IMG_4712.png">
           <h3>Parker</h3>
@@ -393,7 +770,7 @@ next()
           </div>
         </div>
       </div>
-      <div class="team-member">
+      <div class="team-member" data-aos="fade-left" data-aos-duration="1100">
         <div class="team-member-content">
           <img decoding="async" src="https://cdn.discordapp.com/attachments/1078428638615191583/1140430234022326413/IMG_4711.png">
           <h3>Thedeeny</h3>
@@ -416,135 +793,94 @@ next()
 
 
     
-<section id="faq" class="faq">
-  <div class="wrapper">
-    <h2 class="faq-title">FAQ</h2>
-    <div class="reveal"> <!-- Add this div here -->
-      <div class="FAQ">
-        <button class="accordion">
-          Can I purchase the service directly?
-          <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        </button>
-        <div class="pannel">
-          <p>
-            Yes, you can conveniently subscribe or purchase our services directly through our website. Simply go through with your wanted service, complete the purchase, and we will proceed with delivering the service straight to you.
-          </p>
-        </div>
-      </div>
+<section id="faq">
+  <header class="faq_header">
+      <h2 class="faq_header-title">FAQ</h2>
+  </header>
+ <div class="faq__body" data-aos="fade-right" data-aos-duration="1100">
+     <details aria-expanded="true" class="faq__panel" open>
+         <summary class="faq__label">Can I purchase the service directly?</summary>
+         <div class="faq__panel-body">
+         <p class="faq__panel-answer">Yes, you can conveniently subscribe or purchase our services directly through our website. Simply go through with your wanted service, complete the purchase, and we will proceed with delivering the service straight to you.
+        </p>
+     </details>
+     <details aria-expanded="false" class="faq__panel">
+         <summary class="faq__label">How can Galactic Investments help me with cryptocurrency trading?</summary>
+         <div class="faq__panel-body">
+         <p class="faq__panel-answer">Galactic Investments provides accurate and timely trading calls to guide you in making profitable trading decisions. Our team of experts analyzes the market and provides recommendations based on their expertise.
+     </details>
+     <details aria-expanded="false" class="faq__panel">
+         <summary class="faq__label">What if I have specific requirements or need further assistance?</summary>
+         <div class="faq__panel-body">
+         <p class="faq__panel-answer">If you have specific requirements or would like to discuss the service in detail before making a purchase, we recommend reaching out to us. You can use our public discord server ticket system, available on our website. We encourage communication to address your queries and ensure that the service aligns with your needs.</p>
+     </details>
+     <details aria-expanded="false" class="faq__panel">
+        <summary class="faq__label">What payment options are available?</summary>
+        <div class="faq__panel-body">
+        <p class="faq__panel-answer">During our communication, we will discuss the payment options that best suit your convenience. We offer flexibility in payment methods to accommodate our customers' preferences.</p>
 
-      <div class="faq">
-        <button class="accordion">
-          How can Galactic Investments help me with cryptocurrency trading?
-          <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        </button>
-        <div class="pannel">
-          <p>
-            Galactic Investments provides accurate and timely trading calls to guide you in making profitable trading decisions. Our team of experts analyzes the market and provides recommendations based on their expertise.
-          </p>
-        </div>
-      </div>
+      </details>
+      <details aria-expanded="false" class="faq__panel">
+        <summary class="faq__label">Can I trust the recommendations provided by Galactic Investments?</summary>
+        <div class="faq__panel-body">
+        <p class="faq__panel-answer">Galactic Investments has a proven track record and many satisfied members who trade with us full-time. Our calls are provided by experts and based on thorough analysis and expertise in the cryptocurrency market.
+      </details>
+      <details aria-expanded="false" class="faq__panel">
+        <summary class="faq__label">What happens if I don’t pay my renewal?</summary>
+        <div class="faq__panel-body">
+        <p class="faq__panel-answer">You will lose access to your subscription to your chosen service. You can renew at anytime when you are ready to regain your access, we will always welcome you back at Galactic Investments.
+      </details>
+     
+ </div>
 
-      <div class="faq">
-        <button class="accordion">
-          What if I have specific requirements or need further assistance?
-          <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        </button>
-        <div class="pannel">
-          <p>
-            If you have specific requirements or would like to discuss the service in detail before making a purchase, we recommend reaching out to us. You can use our public discord server ticket system, available on our website. We encourage communication to address your queries and ensure that the service aligns with your needs.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq">
-        <button class="accordion">
-          What payment options are available?
-          <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        </button>
-        <div class="pannel">
-          <p>
-            During our communication, we will discuss the payment options that best suit your convenience. We offer flexibility in payment methods to accommodate our customers' preferences.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq">
-        <button class="accordion">
-          What happens if I don’t pay my renewal?
-          <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        </button>
-        <div class="pannel">
-          <p>
-            You will lose access to your subscription to your chosen service. You can renew at anytime when you are ready to regain your access, we will always welcome you back at Galactic Investments.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq">
-        <button class="accordion">
-          Can I trust the recommendations provided by Galactic Investments?
-          <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-        </button>
-        <div class="pannel">
-          <p>
-            Galactic Investments has a proven track record and many satisfied members who trade with us full-time. Our calls are provided by experts and based on thorough analysis and expertise in the cryptocurrency market.
-          </p>
-        </div>
-      </div>
-    </div> <!-- Close the div here -->
-  </div>
 </section>
-
-<script>
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      this.parentElement.classList.toggle("active");
-
-      var pannel = this.nextElementSibling;
-
-      if (pannel.style.display === "block") {
-        pannel.style.display = "none";
-      } else {
-        pannel.style.display = "block";
-      }
-    });
-  }
-</script>
-
-    
-  
-
-
   
   
-  
-<section id="contact" class="contact">
-  <h2>CONTACT US</h2>
-  <div class="reveal">
-    <form class="" method="post" action="email.php">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" name="send" class="glow-on-hover btn" type="btn">Send</button>
+  <!--contact-form------------------->
+  <section id="contact">
+    <h2>CONTACT US</h2>
+    <!--form----------->
+    <form data-aos="fade-up">
+        <!--full-name---->
+        <input type="text" name="fullname" placeholder="Your Name" required>
+        <!--email-------->
+        <input type="email" name="email" placeholder="Your email" required>
+        <!--write-something-->
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <!--send-btn---->
+        <input type="submit" value="Send">
     </form>
-    <div id="message"></div>
-  </div>
 </section>
 
-  
 
 
-  
-
+<!--footer------------------->
 <footer>
-  <p>&copy; 2023 Galactic Investments. All rights reserved.
+    <!--copyright-->
+    <span class="copyright">Copyright 2023 - Galactic Investments</span>
+    <!--footer-social-links---->
+    <div class="footer-social">
+        <!--facebook-->
+        <a href="#">
+            <i class="fab fa-discord"></i>
+        </a>
+        <!--twitter-->
+        <a href="#">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <!--youtube-->
+        <a href="#">
+            <i class="fab fa-telegram"></i>
+        </a>
+    </div>
 </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
