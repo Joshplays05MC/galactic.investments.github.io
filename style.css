@@ -118,7 +118,7 @@ nav {
 
 
 .nav-links {
-  margin-right: 390px; /* Add right margin to create space between logo and navigation links */
+  margin-right: 310px; /* Add right margin to create space between logo and navigation links */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,49 +185,6 @@ nav {
   transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth effect */
   text-decoration: none;
 }
-
-.social-media-icons {
-  margin-right: -200px; /* Add right margin to create space between logo and navigation links */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
-  padding: 5px 15px;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Add transition for smooth effect */
-}
-
-.social-media-icons img {
-  width: 25px;
-  height: 25px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.social-media-icons img:hover {
-  transform: scale(1.1);
-}
-
-
-.burger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  width: 30px;
-  height: 20px;
-  margin-right: 15px;
-}
-
-.line {
-  width: 100%;
-  height: 3px;
-  background-color: #ffffff;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-
-
 
 
 
@@ -505,270 +462,237 @@ nav {
 
 
 
-.glow-on-hover {
-width: 150px;
-height: 50px;
-border: none;
-outline: none;
-color: #fff;
-background:  #ffffff, #ffffff;
-cursor: pointer;
-position: relative;
-z-index: 0;
-border-radius: 10px;
-}
-
-.glow-on-hover:before {
-content: '';
-background: linear-gradient(45deg, #ffffff, #ffffff);
-position: absolute;
-top: -2px;
-left: -2px;
-background-size: 400%;
-z-index: -1;
-filter: blur(5px);
-width: calc(100% + 4px);
-height: calc(100% + 4px);
-animation: glowing 20s linear infinite;
-opacity: 0;
-transition: opacity 0.3s ease-in-out;
-border-radius: 10px;
-}
-
-.glow-on-hover:hover:before {
-opacity: 1;
-}
-
-.glow-on-hover:after {
-z-index: -1;
-content: '';
-position: absolute;
-width: 100%;
-height: 100%;
-background: #0a3243;
-left: 0;
-top: 0;
-border-radius: 10px;
-}
-
-
-
-
-
-
 /* SERVICE CODE */
 
-.services {
-  padding: 125px 0;
-  text-align: center;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  color: #ffffff;
-  margin-bottom: 60px;
-  letter-spacing: 3px;
-}
-
-.services-container {
-  min-height: 30vh;
+#pricing-table {
   display: flex;
-  justify-content: center;
-  gap: 60px;
-}
-
-.service {
-  background-color: transparent;
-  padding: 40px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.6s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  width: 400px; /* Adjust the width as needed */
-  height: 590px; /* Adjust the height as needed */
-}
-
-.service.best-selling {
-  background-color: transparent;
-  border: 2px solid #558bff28;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-
-.service:hover {
-  transform: translateY(-20px);
-}
-
-.service h3 {
-  font-size: 1.9rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.service p.price {
-  font-size: 2.5rem; /* Increase the font size for a larger and more prominent price */
-  margin-top: 20px; /* Place the price at the top */
-  margin-bottom: 10px;
-
-  /* Gradient color effect */
-  background: linear-gradient(90.01deg,#0a3243 .01%,#ffffff 10.01%,#0a3243 100%),linear-gradient(180deg,rgba(0, 0, 0, 0.4) 0%,rgba(0, 0, 0, 0.28) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.service p.description {
-  color: #999;
-  margin-bottom: 20px;
-}
-
-.service a{
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 6px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  border-bottom: 1px solid #558bff28;
-  text-align: center;
-  padding: 10px 10px 10px 0px;
-  transition: all 508ms cubic-bezier(0.77,0,0.175,1);
-  text-decoration: none;
-}
-
-.service a:hover{
-  padding: 10px;
-  background-color: rgba(104,154,248,0.1);
-}
-
-
-.service-features {
-  margin-bottom: 20px;
-}
-
-.service-features span {
-  display: block;
-  font-size: 1.2rem;
-  color: #999;
-  margin-bottom: 10px;
-  position: relative; /* Add relative positioning */
-  padding-left: 0px; /* Add left padding for the symbol */
-}
-
-
-.best-selling-icon {
-  background-color: #558bff28;
-  color: #ffffff;
-  padding: 8px 12px;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  position: fixed; /* Change from "absolute" to "fixed" */
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.btn-buy {
-  margin-top: auto;
-}
-
-.coming-soon {
-  /* Position the service that should have the overlay */
-  position: relative;
-  z-index: 1; /* Ensure the service is above the overlay */
-}
-
-.coming-soon::before {
-  content: "Coming Soon";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(6, 16, 24, 0.95);
-  display: flex;
-  justify-content: center;
+  flex-direction: column; /* Change the flex direction to column */
   align-items: center;
-  border-radius: 10px;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  z-index: 2; /* Ensure the overlay appears above the service details */
-  opacity: 1; /* Overlay is initially visible */
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 20vh;
+  padding: 68px 0;
 }
 
-/* Remove the transition for the overlay opacity */
-.coming-soon:hover::before {
-  opacity: 1; /* Keep overlay visible on hover */
-}
-
-
-
-
-/* Media Query for Mobile Devices */
-@media only screen and (max-width: 1157px) {
-  .services-container {
+.price-box-container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    flex-wrap: wrap;
 }
-
-  .service {
-    flex: none;
-    align-items: center;
-    width: 85%;
-    height: 70%;
-  }
 
   .section-title {
-    font-size: 2.0rem;
-  }
-
-  .service h3 {
-    font-size: 1.7rem;
-  }
-
-  .service p.description {
-    font-size: 0.8rem;
-  }
-
-  .service-features span {
-    font-size: 0.8rem;
-  }
-  
-  .best-selling-icon {
-    background-color: #558bff28;
+    font-size: 2.5rem;
     color: #ffffff;
-    padding: 8px 12px;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    opacity: 0; /* Initially hide the icon */
-    pointer-events: none; /* Ensure the icon doesn't interfere with hover */
-    transition: opacity 0.3s ease; /* Add a smooth transition */
-  }
-
-  /* Show the icon when hovering over a service */
-  .service:hover .best-selling-icon {
-    opacity: 1;
+    margin-top: 60px; /* Adjust the margin-top to control the distance from the top */
+    letter-spacing: 3px;
+    text-align: center;
   }
   
-}
+  .price-box{
+      margin: 10px;
+      width: 265px;
+      border-radius: 5px;
+      height: auto;
+  }
+  .box-top-section{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      width: 100%;
+      border: 1px solid #ebebeb;
+      border-bottom: none;
+      position: relative;
+      border-radius: 10px;
+  }
+   
+  .plan-name{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 5px;
+  }
+  .plan-name strong{
+      color:#ffffff;
+      font-size: 1.5rem;
+      margin: 5px 0px;
+  }
+  .plan-name span{
+      color: #c1c1c1;
+      font-size: 0.8rem;
+  }
+  .plan-img{
+      width:160px;
+      height:117px;
+  }
+  .plan-img img{
+      width:100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+  }
+  .price-section{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 5px;
+  }
+  .price strong{
+      font-size: 4rem;
+      color: #ffffff;  
+  }
+  .price span{
+      font-size: 0.8rem;
+      padding: 0px;
+      margin: 0px;
+      color: #c1c1c1;
+      font-weight: 500;
+  }
+  .per-month{
+      font-size: 0.8rem;
+      color: #c1c1c1;
+  }
+  .box-features-section{
+      border-top: 1px solid #c9c9c9;
+      padding: 20px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      border: 1px solid #ebebeb;
+      border-top: 1px solid #c7c7c7;
+      border-radius: 10px;
+  }
+  .features-box{
+      width: 100%;
+      display: flex;
+      border-radius: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      position: relative;
+  }
+   
+  .features-box i{
+      color: #135a78;
+      margin-right: 7px;
+      font-size: 0.9rem;
+  }
+  .features-box span{
+      color: rgb(192, 192, 192);
+      font-size: 0.8rem;
+  }
+  .features-box:hover{
+      background-color: #ffffff;
+      transition: all ease 0.3s;
+  }
+   
+  .feature-details{
+      position: absolute;
+      bottom:45px;
+      left: 50%;
+      transform: translateX(-50%);
+      width:100%;
+      height: auto;
+      padding: 10px;
+      background-color: #242424;
+      color: #ebebeb;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      text-align: center;
+      box-shadow: 2px 2px 30px rgba(0,0,0,0.10);
+      display: none;
+      animation: fade 0.2s;
+  }
+  .feature-details:after{
+      content: '';
+      width:0px;
+      height: 0px;
+      border-bottom: 5px solid transparent;
+      border-left: 7px solid transparent;
+      border-top: 7px solid #242424;
+      border-right: 5px solid transparent;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+  }
+  .features-box:hover .feature-details{
+      display:block;
+  }
+  .chose-plan-btn{
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #157198; 
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+  }
+  .chose-plan-btn:hover{
+      color: #093446;
+      border-bottom: 1px solid #093446;
+      transition: all ease 0.2s;
+  }
+  @keyframes fade{
+      0%{
+          opacity: 0;
+      }
+      100%{
+          opacity: 1;
+      }
+  }
+  .top-bar{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -20px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      padding: 10px 25px;
+      color: #ffffff;
+      background-color: #2c2c2c;
+      box-shadow: 2px 2px 30px rgba(0,0,0,0.15);
+   
+  }
+  .popular .box-top-section{
+      background-color: #093446;
+  }
+  .price-box:hover .box-top-section,
+  .price-box:hover .box-features-section{
+      box-shadow: 2px 2px 30px rgba(0,0,0,0.09);
+      transition: all ease 0.2s;
+  }
+  @media(max-width:1160px){
+      .price-box-container{
+          width:800px
+      }
+      .price-box{
+          flex-grow: 1;
+      }
+  }
+  @media(max-width:810px){
+     .price-box-container{
+         width: 100%;
+     } 
+  }
+  @media(max-width:570px){
+      .price-box{
+          width:100%;
+          margin: 20px 10px;
+          box-shadow: 2px 2px 30px rgba(0,0,0,0.05);
+      }
 
+      .feature-details{
+        align-items: center;
+        text-align: center;
+      }
+  }
 
 
 
@@ -783,7 +707,7 @@ border-radius: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 0;
+  padding: 88px 0;
   text-align: center;
   color: #fff;
 }
@@ -919,79 +843,44 @@ border-radius: 10px;
 
 /* FAQ CODE */
 
-.wrapper {
-  min-height: 80vh;
-  max-width: 40%;
-  margin: auto;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  padding: 100px 0;
-  color: #fff;
-  position: relative;
-}
+/* FAQ CODE */
 
-.wrapper h2 {
+#faq{
+  max-width: 980px;
+  margin-inline: auto;
+  padding: 100px 15px;
+  min-height: 80vh;
+  margin-bottom: 20vh;
+  
+}
+.faq_header-title{
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center; /* Added */
   letter-spacing: 3px;
+  color: white;
 }
-
-.accordion {
-  background-color: rgba(39, 39, 39, 0.2);
-  color: #fff;
+.faq__panel{
+  padding: 9px 21px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(52, 51, 51, 0.3);
+  border-radius: 7px;
+}
+.faq__label{
+  padding-block: 7px;
+  color: #f4f5f6;
   cursor: pointer;
-  font-size: 1.2rem;
-  width: 100%;
-  /* Adjusted padding and margin */
-  padding: 1.2rem 1.5rem;
-  margin-bottom: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  outline: none;
-  transition: 0.4s;
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  text-align: left;
-  font-weight: bold;
-  border-radius: 5px;
+}
+.faq__panel-answer{
+  color: #c1c1c1;
+  padding-top: 5px;
+  padding-bottom: 7px;
 }
 
-.chevron {
-  margin-left: auto;
-}
 
-.accordion i {
-  font-size: 1.6rem;
-}
 
-.accordion:hover {
-  background-color: #051a22;
-}
 
-.pannel {
-  /* Adjusted padding */
-  padding: 0 1.5rem 1rem 1rem;
-  background-color: rgba(39, 39, 39, 0.2);
-  overflow: hidden;
-  display: none;
-  border-radius: 5px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.pannel p {
-  color: #fff;
-  font-size: 1.0rem;
-  line-height: 1.4;
-}
-
-.faq {
-  border: none;
-  margin: 10px 0;
-}
 
 /* Your existing CSS styles for .accordion and .pannel go here */
 
@@ -1034,21 +923,21 @@ border-radius: 10px;
 
 
 .about-us {
-  min-height: 80vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #fff;
-  padding: 88px 0;
+  padding: 98px 0;
 }
 
 .about-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 30px;
+  gap: 10px;
   margin-top: 30px;
 }
 
@@ -1056,7 +945,7 @@ border-radius: 10px;
   font-size: 2.5rem;
   margin-bottom: 1px;
   color: #fff;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   letter-spacing: 3px;
 }
 
@@ -1071,7 +960,7 @@ border-radius: 10px;
 .about-img img {
   width: 100%;
   max-width: 500px;
-  height: auto;
+  height: 300px;
   border-radius: 10px;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -1086,6 +975,9 @@ border-radius: 10px;
   color: #fff;
   width: 50%;
   max-width: 750px;
+  padding: 5px;
+  border: 1px solid rgba(52, 51, 51, 0.3);
+  border-radius: 8px;
 }
 
 .about-text p {
@@ -1094,7 +986,7 @@ border-radius: 10px;
 }
 
 .about-text ul {
-  color: #999;
+  color: #c1c1c1;
   list-style-type: none; /* Add this line */
 }
 
@@ -1122,20 +1014,20 @@ border-radius: 10px;
   width: 95%;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid rgba(52, 51, 51, 0.3);
+  border: 1px solid rgba(52, 51, 51, 0.3);
 }
 
 .about-us .statistics-stat {
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   color: #fff;
-  flex-basis: 25%;
+  flex-basis: 20%;
 }
 
 .about-us .statistics-stat h3 {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .about-us .statistics-stat p {
@@ -1215,81 +1107,99 @@ border-radius: 10px;
 
 
 /* CONTACT CODE */
-
-.contact {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
+#contact{
+  width:100%;
+  display:flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  color: #fff;
+  flex-direction: column;
+  margin-bottom: 20vh;
 }
-
-.contact h2 {
+#contact h2 {
+  color: white;
   font-size: 2.5rem;
   margin-bottom: 20px;
   letter-spacing: 3px;
 }
 
-.contact input,
-.contact textarea {
-  width: 100%;
+#contact form{
+  width:600px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contact form input,
+#contact form textarea{
+  width:100%;
+  height:50px;
+  margin:5px 0px;
   padding: 10px;
-  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #ffffff;
   border-radius: 5px;
-  outline: none; /* Remove default outline style */
-  border: 1px solid #ccc; /* Add a border */
-  background-color: rgba(255, 255, 255, 0.1); /* Adjust the background color */
-  color: #fff; /* Set text color */
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  
+}
+#contact form textarea{
+  height: 150px;
+}
+#contact form input[type="submit"]{
+  height: 45px;
+  background: linear-gradient(90deg, #0a3243 20%,#0a3243);
+  color: #ffffff;
+  text-transform: uppercase;
 }
 
-.contact textarea[name="message"] {
-  height: 150px; /* Adjust the value as needed */
+
+
+@media(max-width:620px){
+  #contact form{
+      width:90%;
+  }
 }
 
-.contact button {
-  display: inline-block;
-  color: #fff;
+
+
+
+footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #14151610;
+  padding: 10px;
+  margin-top: 50px;
+  border-top: 1px solid #272729;
+}
+.copyright{
+  color:#ffffff;
+}
+.footer-social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-social a{
+  width:35px;
+  height: 35px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #292b3252;
+  margin: 5px;
+  font-size: 0.9rem;
+  font-weight: 400;
   text-decoration: none;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  border: none; /* Remove button border */
-  outline: none; /* Remove button outline */
-  cursor: pointer; /* Add cursor style */
 }
-
-
-.contact input:focus,
-.contact textarea:focus {
-  outline: none; /* Remove default focus outline */
-  border-color: #0a3243; /* Set border color to purple */
-}
-
-
-
-
-
-
-/* Footer CODE */
-
-
-
-footer {
-    background-color: transparent !important;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-    transition: 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-footer a {
-  color: #fff;
-  text-decoration: none;
+.footer-social a:hover{
+  background-color: #0a3243;
+  transition: all ease 0.5s;
 }
 
 
@@ -1384,4 +1294,3 @@ color: #999;
 *::-webkit-scrollbar-thumb:active {
   background-color: #0a3243;
 }
-
