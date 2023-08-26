@@ -1,28 +1,52 @@
-
 const navSlide = () => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
-  const navLinks = document.querySelectorAll('.nav-links li, .logo');
+  const logoLink = document.querySelector('.logo a'); // Select the logo link by class
+  const scrollDuration = 500; // Adjust scroll duration as needed
+  const navLinks = document.querySelectorAll('.nav-links li'); // Select all navigation links
 
   burger.addEventListener('click', () => {
     // Toggle Nav
     nav.classList.toggle('nav-active');
 
-    // Animate Links
-    navLinks.forEach((link, index) => {
-      if (link.style.animation) {
-        link.style.animation = '';
-      } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-      }
-    });
-
     // Burger Animation
     burger.classList.toggle('toggle');
   });
 
+  // Scroll to top when the logo is clicked
+  logoLink.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent the default link behavior
 
+    const startPosition = window.pageYOffset;
+    const targetPosition = 0;
+    const distance = targetPosition - startPosition;
+    const startTime = performance.now();
 
+    function scrollAnimation(currentTime) {
+      const timeElapsed = currentTime - startTime;
+      const run = ease(timeElapsed, startPosition, distance, scrollDuration);
+      window.scrollTo(0, run);
+
+      if (timeElapsed < scrollDuration) {
+        requestAnimationFrame(scrollAnimation);
+      }
+    }
+
+    function ease(t, b, c, d) {
+      // Easing function for smooth scrolling (you can use a library for this)
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(scrollAnimation);
+  });
+
+  // Prevent context menu on long-press for logo link
+  logoLink.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+  });
 
   // Smooth Scroll to Sections
   navLinks.forEach((link) => {
@@ -42,6 +66,7 @@ const navSlide = () => {
 };
 
 navSlide();
+
 
 
 
