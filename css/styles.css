@@ -100,6 +100,7 @@ display: block;
   height: 40px;
   transform: scale(2.1); /* Adjust the scale value as needed */
   margin-right: 400px; /* Add right margin to create space between logo and navigation links */
+  user-select: none; /* Disable selection on the logo */
 }
 
 
