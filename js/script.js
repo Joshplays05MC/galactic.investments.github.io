@@ -15,7 +15,7 @@ const navSlide = () => {
 
   // Scroll to top when the logo is clicked
   logoLink.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent the default link behavior
+    window.location.href = '#home';
 
     const startPosition = window.pageYOffset;
     const targetPosition = 0;
