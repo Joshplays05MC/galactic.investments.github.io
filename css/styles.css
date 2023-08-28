@@ -216,7 +216,6 @@ nav {
 
   .nav {
     justify-content: center; /* Center the logo on mobile view */
-    z-index: 200; 
   }
 
   /* Additional styles for the contact button */
@@ -479,7 +478,7 @@ nav {
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  margin-top: 20vh;
+  margin-top: 10vh;
   padding: 68px 0;
 }
 
@@ -493,7 +492,7 @@ nav {
   .section-title {
     font-size: 2.5rem;
     color: #ffffff;
-    margin-top: 60px; /* Adjust the margin-top to control the distance from the top */
+    margin-top: 45px; /* Adjust the margin-top to control the distance from the top */
     letter-spacing: 3px;
     text-align: center;
   }
@@ -618,7 +617,6 @@ nav {
       animation: fade 0.2s;
   }
   .feature-details:after{
-      content: '';
       width:0px;
       height: 0px;
       border-bottom: 5px solid transparent;
@@ -973,15 +971,15 @@ nav {
 }
 
 .about-img a:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .about-text {
   text-align: left;
   color: #fff;
   width: 50%;
-  max-width: 750px;
-  padding: 5px;
+  max-width: 650px;
+  padding: 10px;
   border: 1px solid rgba(52, 51, 51, 0.3);
   border-radius: 8px;
 }
