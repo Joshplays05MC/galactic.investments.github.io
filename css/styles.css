@@ -472,7 +472,7 @@ nav {
 
 
 .about-us {
-  min-height: 120vh;
+  min-height: 130vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -515,7 +515,7 @@ nav {
 }
 
 .about-img a:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .about-text {
@@ -523,7 +523,7 @@ nav {
   color: #fff;
   max-width: 660px;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.059);
   border-radius: 8px;
 }
 
@@ -559,11 +559,10 @@ nav {
   padding: 10px;
   border-radius: 8px;
   margin-top: 40px;
-  border: none;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.059);
   margin-top: 90px;
 }
 
@@ -618,7 +617,7 @@ nav {
     display: grid;
     gap: 20px;
     background-color: rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.059);
     padding: 20px;
     border-radius: 10px;
     font-size: 1.7rem;
@@ -653,6 +652,7 @@ nav {
 
   .about-us .statistics-section {
     width: 90%;
+    font-size: 0.8rem;
   }
 }
 
@@ -670,6 +670,7 @@ nav {
   background-position: center;
   background-size: 1000px;
   background-repeat: no-repeat;
+  
 }
 
 .content-img {
@@ -691,6 +692,9 @@ nav {
   flex-direction: column;
   justify-content: center;
   margin-left: 190px; /* Adjust this margin to decrease the gap */
+  border: 1px solid rgba(255, 255, 255, 0.059);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .content-text span {
@@ -705,7 +709,7 @@ nav {
   font-size: 2.3rem;
   color: #0a3243;
   line-height: 45px;
-  margin: 10px 0px; /* Adjust the margin to decrease space */
+  margin: 1px 0px; /* Adjust the margin to decrease space */
 }
 
 .content-text p {
@@ -724,6 +728,15 @@ nav {
     width: 90%;
     margin: 10px auto; /* Center the text and increase space between sections */
   }
+
+  .content-text h2{
+    font-size: 1.5rem;
+  }
+
+  .content-text p{
+    font-size: 0.8rem;
+  }
+
 
   /* Increase space between content sections */
   #content,
@@ -767,14 +780,14 @@ nav {
 	color: #fff;
 	font-size: 2.5rem;
 	text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 .box{
 	padding: 16px;
 	background: transparent;
 	border-radius: 15px;
 	transition: all .38s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.059);
 
 }
 .box h3{
@@ -814,6 +827,9 @@ nav {
 	.center h1{
 		font-size: 3.2rem;
 	}
+  .team h1{
+    font-size: 2rem;
+  }
 }
 
 /* FAQ CODE */
@@ -837,7 +853,7 @@ nav {
 .faq__panel{
   padding: 9px 21px;
   margin-bottom: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.059);
   border-radius: 7px;
 }
 .faq__label{
@@ -853,26 +869,8 @@ nav {
 
 
 @media screen and (max-width: 768px) {
-  .wrapper {
-    width: auto;
-    max-width: 95%;
-    margin-bottom: 30px;
-  }
-
-  .accordion {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    width: 100%; /* Adjusted width for mobile */
-    padding: 1rem; /* Adjusted padding for mobile */
-    margin-bottom: 10px;
-  }
-
-  .accordion i {
-    margin-top: 5px;
-    margin-left: 0;
-    text-align: left;
-    font-size: 1.2rem; /* Adjusted font size for mobile */
+  .faq__panel-answer{
+    font-size: 0.8rem;
   }
 }
 
@@ -923,7 +921,7 @@ nav {
   outline: none;
   background-color: transparent ;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.059);
 }
 .notify-box .notify-btn{
   min-width: 100px;
