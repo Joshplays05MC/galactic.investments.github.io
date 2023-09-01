@@ -113,7 +113,7 @@ gsap.fromTo(
   {
     opacity: 0,
     duration: 1.0,
-    delay: 1.5,
+    delay: 2,
     onComplete: function() {
       // Remove the loading page and allow scrolling after the animation is complete
       document.querySelector(".loading-page").remove();
@@ -122,12 +122,8 @@ gsap.fromTo(
   }
 );
 
-gsap.to(".progress-line", {
-  width: "10%",
-  duration: 1.0,
-  delay: 0.5,
-  ease: "linear"
-});
+
+
 
 
 
