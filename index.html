@@ -30,7 +30,10 @@
 
   <div class="loading-page">
     <img class="preloader-logo" src="images/reallogo.PNG" alt="Logo" draggable="false">
-    <div class="progress-line"></div>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
   integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
@@ -231,7 +234,7 @@ next()
     document.addEventListener("DOMContentLoaded", function() {
       function animateValue(element, start, end, duration) {
         const range = end - start;
-        const increment = range / (duration / 10);
+        const increment = range / (duration / 20);
         let current = start;
     
         const timer = setInterval(() => {
@@ -270,9 +273,9 @@ next()
             const profitElement = document.getElementById("profit");
             const nftsElement = document.getElementById("nfts");
     
-            animateValue(snipesElement, 0, 40, 2000);
-            animateValue(profitElement, 0, 1000000, 2000);
-            animateValue(nftsElement, 0, 25, 2000);
+            animateValue(snipesElement, 0, 40, 9000);
+            animateValue(profitElement, 0, 1000000, 9000);
+            animateValue(nftsElement, 0, 25, 9000);
     
             observer.unobserve(section);
           }
