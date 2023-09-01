@@ -58,12 +58,36 @@ display: block;
   animation: draw 8s ease;
 }
 
-.progress-line {
-  width: 1;
-  height: 1px;
-  background-color: #ffffff;
+.line-box {
+  padding: 2px;
+  width: 10%;
+  height: 28  px;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
 }
 
+.line-box .line {
+  height: 20px;
+  border-radius: 20px;
+  background: #ffffff;
+  animation: loading 2s forwards cubic-bezier(0,0,0,0);
+}
+
+@keyframes loading{
+  0%{
+    width:0%;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+/* Add CSS for mobile responsiveness */
+@media (max-width: 768px) {
+  .line-box {
+    width: 30%;
+  }
+}
 
 
 
