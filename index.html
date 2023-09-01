@@ -421,6 +421,16 @@ next()
 		</div>
 	</section>
 
+	  <script>
+	    // Check screen width and initialize Tilt.js only on screens wider than a certain breakpoint
+	    if (window.innerWidth > 768) { // Adjust the breakpoint as needed
+	      var tiltElements = document.querySelectorAll('[data-tilt]');
+	      tiltElements.forEach(function(element) {
+	        VanillaTilt.init(element);
+	      });
+	    }
+  	</script>
+
 
 
   
